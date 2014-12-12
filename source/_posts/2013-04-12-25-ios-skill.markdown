@@ -1,0 +1,35 @@
+---
+layout: post
+title: "25个增强iOS应用程序性能的提示和技巧"
+date: 2013-04-12 11:38
+comments: true
+categories: ios
+---
+
+[来源](http://beyondvincent.com)
+
+1. 使用ARC进行内存管理
+2. 在适当的情况下使用reuseIdentifier
+3. 尽可能将View设置为不透明（Opaque）
+4. 避免臃肿的XIBs
+5. 不要阻塞主线程
+6. 让图片的大小跟UIImageView一样
+7. 选择正确的集合
+8. 使用GZIP压缩
+9. 重用和延迟加载View
+10. 缓存、缓存、缓存
+11. 考虑绘制
+12. 处理内存警告
+13. 重用花销很大的对象
+14. 使用Sprite Sheets
+15. 避免重新处理数据
+16. 选择正确的数据格式
+17. 设置适当的背景图片
+18. 降低Web内容的影响
+19. 设置阴影路径
+20. 优化TableView
+21. 选择正确的数据存储方式
+22. 加速启动时间
+23. 使用Autorelease Pool
+24. 缓存图片 — 或者不缓存
+25. 尽量避免Date格式化

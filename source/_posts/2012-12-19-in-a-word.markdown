@@ -1,0 +1,16 @@
+---
+layout: post
+title: "in a word"
+date: 2012-12-19 10:53
+comments: true
+categories: other
+---
+
+* [选择之困惑——为何多即是少？](http://xingfuke.net/xingfuke766)
+* [程序员真的很懒...](http://www.williamlong.info/archives/3062.html)
+* 自卑大多来源于虚荣
+* 语言,不过是人们对认知世界的一种表达方式
+* 一切技术的进步，都是为了满足人们日益变懒的需求
+* “the medium is the message” (媒介才是信息)。真正带来巨大影响的，不是内容（content），而是媒介（medium）本身。
+
+> 本该淡淡然~~~
