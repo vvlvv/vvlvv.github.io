@@ -1,0 +1,481 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Wget Tutorials - 人生短短数十载</title>
+  <meta name="author" content="vvlee">
+
+  
+  <meta name="description" content="Wget是一种很好用的因特网下载工具，他具有的很多特性是其他工具所不能比拟的，再者他是一个轻量级可配置的下载工具。 本文结合例子介绍Windows下wget的多种下载方法和用途。 1、用Wget下载单个文件 下载的时候会显示： 　　~文件的大小、连接状态、连接地址以及文件的大小 　　~保存的名称 &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://livv.github.io/blog/2013/06/27/wget-tutorials">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="人生短短数十载" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">人生短短数十载</a></h1>
+  
+    <h2>本该淡淡然</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:livv.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Wget Tutorials</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2013-06-27T15:05:00+08:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>27</span><span class='date-suffix'>th</span>, <span class='date-year'>2013</span></span> <span class='time'>3:05 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Wget是一种很好用的因特网下载工具，他具有的很多特性是其他工具所不能比拟的，再者他是一个轻量级可配置的下载工具。</p>
+
+<p>本文结合例子介绍Windows下wget的多种下载方法和用途。</p>
+
+<p>1、用Wget下载单个文件</p>
+
+<p>下载的时候会显示：</p>
+
+<p>　　~文件的大小、连接状态、连接地址以及文件的大小</p>
+
+<p>　　~保存的名称</p>
+
+<p>　　~下载进度条</p>
+
+<p>　　~下载速度、时间，还有多少未下载</p>
+
+<p>例如我下载editplus时输入</p>
+
+<p>D:\Hack stuff\wget>wget <a href="http://software-files-a.cnet.com/s/software/12/32/81/47/">http://software-files-a.cnet.com/s/software/12/32/81/47/</a>
+epp331.exe?token=1329413178_4553efa847829f3ecef10c1bc256fcc0&amp;lop=link&amp;ptype=3001
+&amp;ontid=2352&amp;siteId=4&amp;edId=3&amp;spi=537d5d5485f688682d82c481c4fb15a1&amp;pid=12328147&amp;ps
+id=10018241&amp;&amp;fileName=epp331.exe
+则下载时会显示以下内容</p>
+
+<p>D:\Hack stuff\wget>wget <a href="http://software-files-a.cnet.com/s/software/12/32/81/47/">http://software-files-a.cnet.com/s/software/12/32/81/47/</a>
+epp331.exe?token=1329413178_4553efa847829f3ecef10c1bc256fcc0&amp;lop=link&amp;ptype=3001
+&amp;ontid=2352&amp;siteId=4&amp;edId=3&amp;spi=537d5d5485f688682d82c481c4fb15a1&amp;pid=12328147&amp;ps
+id=10018241&amp;&amp;fileName=epp331.exe
+&ndash;2012-02-16 15:28:50&ndash;  <a href="http://software-files-a.cnet.com/s/software/12/32/81/47">http://software-files-a.cnet.com/s/software/12/32/81/47</a>
+/epp331.exe?token=1329413178_4553efa847829f3ecef10c1bc256fcc0
+Resolving software-files-a.cnet.com&hellip; 204.2.171.33, 204.2.171.35
+Connecting to software-files-a.cnet.com|204.2.171.33|:80&hellip; connected.
+HTTP request sent, awaiting response&hellip; 200 OK
+Length: 1766464 (1.7M) [application/octet-stream]
+Saving to: `epp331.exe@token=1329413178_4553efa847829f3ecef10c1bc256fcc0&#8217;</p>
+
+<p>18% [======>                                ] 335,238     20.5K/s  eta 64s</p>
+
+<p>2、用Wget-O下载可以为下载的文件指定另外一个名字</p>
+
+<p>默认情况下wget会用最后的斜线后面的所有字符来命名下载下来的文件，如上例所示保存的文件名为</p>
+
+<p>Saving to: `epp331.exe@token=1329413178_4553efa847829f3ecef10c1bc256fcc0&#8217;
+这不是我们所想要的，我们可以用-O选项来改变将文件保存为editplus.exe</p>
+
+<p>D:\Hack stuff\wget>wget -O editplus.exe <a href="http://software-files-a.cnet.com/s/software/12/32/81/47/">http://software-files-a.cnet.com/s/software/12/32/81/47/</a>
+epp331.exe?token=1329413178_4553efa847829f3ecef10c1bc256fcc0&amp;lop=link&amp;ptype=3001
+&amp;ontid=2352&amp;siteId=4&amp;edId=3&amp;spi=537d5d5485f688682d82c481c4fb15a1&amp;pid=12328147&amp;ps
+id=10018241&amp;&amp;fileName=epp331.exe</p>
+
+<p>3、用Wget &ndash;limit-rate指定下载的速度</p>
+
+<p>如下面这个例子限制速度为300k</p>
+
+<p>D:\Hack stuff\wget>wget &ndash;limit-rate=300k <a href="http://downloads.sourceforge.net/project/boost/boost-doc">http://downloads.sourceforge.net/project/boost/boost-doc</a>
+s/1.47.0/boost_1_47_pdf.zip?r=http%3A%2F%2Fsourceforge.net%2Fprojects%2Fboost%2F
+&amp;ts=1329379231&amp;use_mirror=nchc</p>
+
+<p>4、续传下载用Wget -c</p>
+
+<p>当你在下载一个大文件时突然中断了那么这个选项就派上用场了</p>
+
+<p>D:\Hack stuff\wget>wget -c <a href="http://downloads.sourceforge.net/project/boost/boost-doc">http://downloads.sourceforge.net/project/boost/boost-doc</a>
+s/1.47.0/boost_1_47_pdf.zip?r=http%3A%2F%2Fsourceforge.net%2Fprojects%2Fboost%2F
+&amp;ts=1329379231&amp;use_mirror=nchc</p>
+
+<p>5、后台下载用wget -b</p>
+
+<p>用此选项下载时只会初始化下载而不会显示相关信息</p>
+
+<p>D:\Hack stuff\wget>wget -b <a href="http://downloads.sourceforge.net/project/boost/boost-">http://downloads.sourceforge.net/project/boost/boost-</a>
+docs/1.47.0/boost_1_47_pdf.zip?r=http%3A%2F%2Fsourceforge.net%2Fprojects%2Fboost
+%2F&amp;ts=1329379231&amp;use_mirror=nchc
+Continuing in background, pid 6132.
+Output will be written to `wget-log&#8217;.
+下载以后会在wget目录下生产wget-log文件，用记事本打开可查看里面的内容如下所示</p>
+
+<p>&ndash;2012-02-16 16:12:55&ndash;  <a href="http://downloads.sourceforge.net/project/boost/boost-docs/1.47.0/boost_1_47_pdf.zip?r=http%3A%2F%2Fsourceforge.net%2Fprojects%2Fboost%2F">http://downloads.sourceforge.net/project/boost/boost-docs/1.47.0/boost_1_47_pdf.zip?r=http%3A%2F%2Fsourceforge.net%2Fprojects%2Fboost%2F</a>
+Resolving downloads.sourceforge.net&hellip; 216.34.181.59
+Connecting to downloads.sourceforge.net|216.34.181.59|:80&hellip; connected.
+HTTP request sent, awaiting response&hellip; 302 Found
+Location: <a href="http://nchc.dl.sourceforge.net/project/boost/boost-docs/1.47.0/boost_1_47_pdf.zip">http://nchc.dl.sourceforge.net/project/boost/boost-docs/1.47.0/boost_1_47_pdf.zip</a> [following]
+&ndash;2012-02-16 16:12:56&ndash;  <a href="http://nchc.dl.sourceforge.net/project/boost/boost-docs/1.47.0/boost_1_47_pdf.zip">http://nchc.dl.sourceforge.net/project/boost/boost-docs/1.47.0/boost_1_47_pdf.zip</a>
+Resolving nchc.dl.sourceforge.net&hellip; 211.79.60.17
+Connecting to nchc.dl.sourceforge.net|211.79.60.17|:80&hellip; connected.
+HTTP request sent, awaiting response&hellip; 200 OK
+Length: 31421410 (30M) [application/zip]
+Saving to: `boost_1_47_pdf.zip.4&#8217;</p>
+
+<pre><code> 0K .......... .......... .......... .......... ..........  0% 19.7K 25m51s
+50K .......... .......... .......... .......... ..........  0% 29.1K 21m40s
+</code></pre>
+
+<p>   100K &hellip;&hellip;&hellip;. &hellip;&hellip;&hellip;. &hellip;&hellip;&hellip;. &hellip;&hellip;&hellip;. &hellip;&hellip;&hellip;.  0% 20.8K 22m35s
+   150K &hellip;&hellip;&hellip;. &hellip;&hellip;&hellip;. &hellip;&hellip;&hellip;. &hellip;&hellip;&hellip;. &hellip;&hellip;&hellip;.  0% 19.5K 23m26s
+   200K &hellip;&hellip;&hellip;. &hellip;&hellip;&hellip;. &hellip;&hellip;&hellip;. &hellip;&hellip;&hellip;. &hellip;&hellip;&hellip;.  0% 18.4K 24m13s
+   250K &hellip;&hellip;&hellip;. &hellip;&hellip;&hellip;. &hellip;&hellip;&hellip;. &hellip;&hellip;&hellip;. &hellip;&hellip;&hellip;.  0% 20.8K 24m13s
+   300K &hellip;&hellip;&hellip;. &hellip;&hellip;&hellip;. &hellip;&hellip;&hellip;. &hellip;&hellip;&hellip;. &hellip;&hellip;&hellip;.  1% 18.2K 24m41s
+   350K &hellip;&hellip;&hellip;. &hellip;&hellip;&hellip;. &hellip;&hellip;&hellip;. &hellip;&hellip;&hellip;. &hellip;&hellip;&hellip;.  1% 23.5K 24m16s</p>
+
+<p>6、测试你要下载的地址用Wget &ndash;spider</p>
+
+<p>wget &ndash;spider DOWNLOAD-URL
+如果所给URL是正确的则会显示</p>
+
+<p>Resolving downloads.sourceforge.net&hellip; 216.34.181.59
+Connecting to downloads.sourceforge.net|216.34.181.59|:80&hellip; connected.
+HTTP request sent, awaiting response&hellip; 302 Found
+Location: <a href="http://ncu.dl.sourceforge.net/project/boost/boost-docs/1.47.0/boost_1_">http://ncu.dl.sourceforge.net/project/boost/boost-docs/1.47.0/boost_1_</a>
+47_pdf.zip [following]
+Spider mode enabled. Check if remote file exists.
+&ndash;2012-02-16 16:21:08&ndash;  <a href="http://ncu.dl.sourceforge.net/project/boost/boost-docs/">http://ncu.dl.sourceforge.net/project/boost/boost-docs/</a>
+1.47.0/boost_1_47_pdf.zip
+Resolving ncu.dl.sourceforge.net&hellip; 140.115.17.45
+Connecting to ncu.dl.sourceforge.net|140.115.17.45|:80&hellip; connected.
+HTTP request sent, awaiting response&hellip; 200 OK
+Length: 31421410 (30M) [application/zip]
+Remote file exists.
+否则显示</p>
+
+<p>Spider mode enabled. Check if remote file exists.
+&ndash;2012-02-16 16:23:06&ndash;  <a href="http://downloads.sourceforge.net/project/boost/boost-do">http://downloads.sourceforge.net/project/boost/boost-do</a>
+cs/1.47.0/boost_1_47_pdf222.zip?r=http%3A%2F%2Fsourceforge.net%2Fprojects%2Fboos
+t%2F
+Resolving downloads.sourceforge.net&hellip; 216.34.181.59
+Connecting to downloads.sourceforge.net|216.34.181.59|:80&hellip; connected.
+HTTP request sent, awaiting response&hellip; 404 Not Found
+Remote file does not exist &ndash; broken link!!!</p>
+
+<p>7、增加重连次数用Wget -tries</p>
+
+<p>在网络有问题的情况次选项尤其有用，默认是wget会重连20次以成功完成下载，我们可以把他增加为我们期待的次数</p>
+
+<p>wget &ndash;tries=100 DOWNLOAD-URL</p>
+
+<p>8、下载多个文件/URLS用wget -i</p>
+
+<p>首先把所有要下载的文件或者URL存到一个记事本中，比如aa.txt，里面内容如下</p>
+
+<p>URL1
+URL2
+URL3
+URL4
+接下来输入如下代码就可以批量下载了</p>
+
+<p>wget -i aa.txt</p>
+
+<p>9、下载一个完整的网站用wget -mirror</p>
+
+<p>以下实现是你想完整的下载一个网站用于本地浏览</p>
+
+<p>wget &ndash;mirror  -p &ndash;convert-links -P LOCAL-DIR WEBSITE-URL
+&ndash;mirror:打开镜像选项</p>
+
+<p>-p:下载所有用于显示给定网址所必须的文件</p>
+
+<p>&ndash;convert-links：下载以后，转换链接用于本地显示</p>
+
+<p>-P LOCAL_DIR：保存所有的文件或目录到指定的目录下</p>
+
+<p>10、保存输出到日志文件而不是标准输出用wget -o</p>
+
+<p>当你想要把信息保存到一个文件而不是在终端显示时用以下代码。</p>
+
+<p>wget -o download.log DOWNLOAD-URL</p>
+
+<p>11、当超过指定大小时终止下载用wget -Q</p>
+
+<p>当文件已下载10M，此时你想停止下载可以使用下面的命令行</p>
+
+<p>wget -Q10m -i FILE-WHICH-HAS-URLS
+注意：此选项只能在下载多个文件时有用，当你下载一个文件时没用。</p>
+
+<p>12、下载特定文件类型的文件用wget -r -A</p>
+
+<p>你可以用此方法下载一下文件：</p>
+
+<p>~从一个网站下载所有图片
+~从一个网站下载所有视频</p>
+
+<p>~从一个网站下载所有PDF文件</p>
+
+<p>wget -r -A.pdf <a href="http://url-to-webpage-with-pdfs/">http://url-to-webpage-with-pdfs/</a></p>
+
+<p>13、指定不下载某一类型的文件用wget &ndash;reject</p>
+
+<p>你发现一个网站很有用，但是你不想下载上面的图片，因为太占流量，此时你可以用如下命令。</p>
+
+<p>wget &ndash;reject=gif WEBSITE-TO-BE-DOWNLOADED</p>
+
+<p>14、用wget实现FTP下载</p>
+
+<p>匿名FTP下载用</p>
+
+<p>wget ftp-url
+有用户名和密码的FTP下载</p>
+
+<p>wget &ndash;ftp-user=USERNAME &ndash;ftp-password=PASSWORD DOWNLOAD-URL</p>
+
+<p>15、wget下载有的资源时必须用选项 &ndash;no-check-certificate，否则会提示没有认证不允许下载</p>
+
+<p>wget &ndash;no-check-certificate URL</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">vvlee</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2013-06-27T15:05:00+08:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>27</span><span class='date-suffix'>th</span>, <span class='date-year'>2013</span></span> <span class='time'>3:05 pm</span></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/tools/'>tools</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://livv.github.io/blog/2013/06/27/wget-tutorials/" data-via="" data-counturl="http://livv.github.io/blog/2013/06/27/wget-tutorials/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/06/27/uploade2appstore-via-command-line/" title="Previous Post: 上传appstore通过命令行">&laquo; 上传appstore通过命令行</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2013/07/03/mac-os-terminal-skill/" title="Next Post: mac os terminal skill">mac os terminal skill &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/07/17/iphone-lcd-clock-use-system-font/">Iphone Lcd Clock Use System Font</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/07/03/mac-os-terminal-skill/">Mac Os Terminal Skill</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/06/27/wget-tutorials/">Wget Tutorials</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/06/27/uploade2appstore-via-command-line/">上传appstore通过命令行</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/06/21/git-log-geek/">Git Log Geek</a>
+      </li>
+    
+  </ul>
+</section>
+  
+<section>  
+  <a target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=aR8fGgEIDQYeKR8AGUcYGEcKBgQ" style="text-decoration:none;"><img src="http://rescdn.qqmail.com/zh_CN/htmledition/images/function/qm_open/ico_mailme_01.png"/></a>
+</section>  
+  
+
+  
+<section>  
+  <h1>新浪微博</h1>  
+  <ul id="weibo">  
+    <li>  
+      <iframe   
+        width="100%"   
+        height="550"   
+        class="share_self"   
+        frameborder="0"   
+        scrolling="no"   
+        src="http://widget.weibo.com/weiboshow/index.php?width=0&height=550&ptype=1&speed=0&skin=&isTitle=0&noborder=1&isWeibo=1&isFans=&uid=2099590271&verifier=c77742aa">  
+      </iframe>  
+    </li>  
+  </ul>  
+</section>  
+  
+
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/livv">@livv</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'livv',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - vvlee -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'vvblog';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://livv.github.io/blog/2013/06/27/wget-tutorials/';
+        var disqus_url = 'http://livv.github.io/blog/2013/06/27/wget-tutorials/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

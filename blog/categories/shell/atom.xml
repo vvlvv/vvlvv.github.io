@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Shell | 人生短短数十载]]></title>
+  <link href="http://livv.github.io/blog/categories/shell/atom.xml" rel="self"/>
+  <link href="http://livv.github.io/"/>
+  <updated>2014-12-13T14:42:35+08:00</updated>
+  <id>http://livv.github.io/</id>
+  <author>
+    <name><![CDATA[vvlee]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Shell_manual]]></title>
+    <link href="http://livv.github.io/blog/2013/03/15/shell-manual/"/>
+    <updated>2013-03-15T12:34:00+08:00</updated>
+    <id>http://livv.github.io/blog/2013/03/15/shell-manual</id>
+    <content type="html"><![CDATA[<h3>一些强大的命令</h3>
+
+<ul>
+<li><code>!$</code></li>
+</ul>
+
+
+<pre><code>!$是一个特殊的环境变量，它代表了上一个命令的最后一个字符串。如：你可能会这样：
+$mkdir mydir
+$mv mydir yourdir
+$cd yourdir
+可以改成：
+$mkdir mydir
+$mv !$ yourdir
+$cd !$
+</code></pre>
+
+<ul>
+<li><code>sudo !!</code></li>
+</ul>
+
+
+<pre><code>以root的身份执行上一条命令 。
+场景举例：比如Ubuntu里用apt-get安装软件包的时候是需要root身份的，我们经常会忘记在apt-get前加sudo。每次不得不加上sudo再重新键入这行命令，这时可以很方便的用sudo !!完事。
+（陈皓注：在shell下，有时候你会输入很长的命令，你可以使用!xxx来重复最近的一次命令，比如，你以前输入过，vi /where/the/file/is, 下次你可以使用 !vi 重得上次最近一次的vi命令。）
+</code></pre>
+
+<ul>
+<li><code>cd –</code></li>
+</ul>
+
+
+<pre><code>回到上一次的目录 。
+场景举例：当前目录为/home/a，用cd ../b切换到/home/b。这时可以通过反复执行cd –命令在/home/a和/home/b之间来回方便的切换。
+</code></pre>
+
+<ul>
+<li><code>‘ALT+.’ or ‘&lt;ESC&gt; .’</code></li>
+</ul>
+
+
+<pre><code>热建alt+. 或 esc+. 可以把上次命令行的参数给重复出来。
+</code></pre>
+
+<ul>
+<li><code>^old^new</code></li>
+</ul>
+
+
+<pre><code>替换前一条命令里的部分字符串。
+场景：echo "wanderful"，其实是想输出echo "wonderful"。只需要^a^o就行了，对很长的命令的错误拼写有很大的帮助。（陈皓注：也可以使用 !!:gs/old/new）
+</code></pre>
+
+<ul>
+<li><code>du -s * | sort -n | tail</code></li>
+</ul>
+
+
+<pre><code>列出当前目录里最大的10个文件。
+</code></pre>
+
+<ul>
+<li><code>:w !sudo tee %</code></li>
+</ul>
+
+
+<pre><code>在vi中保存一个只有root可以写的文件
+</code></pre>
+
+<ul>
+<li><code>&gt; file.txt</code></li>
+</ul>
+
+
+<pre><code>创建一个空文件，比touch短。
+</code></pre>
+
+<ul>
+<li><p>在命令行前加空格，该命令不会进入history里。</p></li>
+<li><p><code>echo “ls -l” | at midnight</code></p></li>
+</ul>
+
+
+<pre><code>在某个时间运行某个命令。
+</code></pre>
+
+<ul>
+<li><code>ps aux | sort -nk +4 | tail</code></li>
+</ul>
+
+
+<pre><code>列出头十个最耗内存的进程
+</code></pre>
+
+<ul>
+<li><code>man ascii</code></li>
+</ul>
+
+
+<pre><code>显示ascii码表。
+场景：忘记ascii码表的时候还需要google么?尤其在天朝网络如此“顺畅”的情况下，就更麻烦在GWF多应用一次规则了，直接用本地的man ascii吧。
+</code></pre>
+
+<ul>
+<li><code>ssh user@server bash &lt; /path/to/local/script.sh</code></li>
+</ul>
+
+
+<pre><code>在远程机器上运行一段脚本。这条命令最大的好处就是不用把脚本拷到远程机器上。
+</code></pre>
+
+<ul>
+<li><code>python -m SimpleHTTPServer</code></li>
+</ul>
+
+
+<pre><code>一句话实现一个HTTP服务，把当前目录设为HTTP服务目录，可以通过http://localhost:8000访问 这也许是这个星球上最简单的HTTP服务器的实现了。
+</code></pre>
+]]></content>
+  </entry>
+  
+</feed>

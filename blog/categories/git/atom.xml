@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Git | 人生短短数十载]]></title>
+  <link href="http://livv.github.io/blog/categories/git/atom.xml" rel="self"/>
+  <link href="http://livv.github.io/"/>
+  <updated>2014-12-13T14:42:35+08:00</updated>
+  <id>http://livv.github.io/</id>
+  <author>
+    <name><![CDATA[vvlee]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Git Log Geek]]></title>
+    <link href="http://livv.github.io/blog/2013/06/21/git-log-geek/"/>
+    <updated>2013-06-21T14:21:00+08:00</updated>
+    <id>http://livv.github.io/blog/2013/06/21/git-log-geek</id>
+    <content type="html"><![CDATA[<ul>
+<li>打开.gitconfig文件(该文件在用户目录下面)</li>
+</ul>
+
+
+<pre><code>vim .gitconfig
+</code></pre>
+
+<ul>
+<li>配置gitconfig</li>
+</ul>
+
+
+<p>在打开的文件中加入下面的命令：</p>
+
+<pre><code>[alias]
+       lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset' --abbrev-commit
+</code></pre>
+
+<ul>
+<li>查看配置后的log</li>
+</ul>
+
+
+<pre><code>git lg
+</code></pre>
+
+<ul>
+<li>在log中查看哪一行被修发了</li>
+</ul>
+
+
+<pre><code>git lg -p
+</code></pre>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Goagent Bitbucket]]></title>
+    <link href="http://livv.github.io/blog/2013/06/11/goagent-bitbucket/"/>
+    <updated>2013-06-11T22:39:00+08:00</updated>
+    <id>http://livv.github.io/blog/2013/06/11/goagent-bitbucket</id>
+    <content type="html"><![CDATA[<pre><code>git config --add http.proxy 127.0.0.1:8087
+git config --add https.proxy 127.0.0.1:8087
+git config --add http.sslVerify false
+git config --add https.sslVerify false
+
+
+
+url = https://*****@bitbucket.org/****.git
+pushurl = https://****@bitbucket.org/****.git
+</code></pre>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Repack of Git Repository Fails]]></title>
+    <link href="http://livv.github.io/blog/2012/04/24/repack-of-git-repository-fails/"/>
+    <updated>2012-04-24T11:00:00+08:00</updated>
+    <id>http://livv.github.io/blog/2012/04/24/repack-of-git-repository-fails</id>
+    <content type="html"><![CDATA[<h3>question</h3>
+
+<p>I have a git repository residing on a server with limited memory. When I try to clone an existing repository from the server I get the following error</p>
+
+<pre><code>Cloning into 'carRecognition'...
+remote: Counting objects: 3012, done.
+error: git upload-pack: git-pack-objects died with error.
+fatal: git upload-pack: aborting due to possible repository corruption on the remote side.
+remote: aborting due to possible repository corruption on the remote side.
+fatal: early EOF
+fatal: index-pack failed
+</code></pre>
+
+<h3>solution</h3>
+
+<p>Your solution has got you a working copy locally and remotely, but will cause problems again when the remote repository decides to repack itself again. Fortunately, you can set config options that will reduce the amount of memory needed for repacking in both repositories &ndash; these essentially make the command line parameters that you added into the default options when repacking. So, you should log in to the remote, change into the repository and do:</p>
+
+<pre><code>git config pack.windowMemory 10m
+git config pack.packSizeLimit 20m
+</code></pre>
+
+<p>You may want to do the same on your local repository. (Incidentally I guess that either your repository is very large or these are machines with little memory - these values seem very low to me.)</p>
+
+<p>For what it&rsquo;s worth, when getting malloc failures on repacking very large repositories in the past, I&rsquo;ve also changed the values of core.packedgitwindowsize, core.packedgitlimit, core.deltacachesize, pack.deltacachesize, pack.window and pack.threads but it sounds as if you don&rsquo;t need any further options :)</p>
+
+<blockquote><p>本该淡淡然~~~</p></blockquote>
+]]></content>
+  </entry>
+  
+</feed>

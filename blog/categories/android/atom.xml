@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Android | 人生短短数十载]]></title>
+  <link href="http://livv.github.io/blog/categories/android/atom.xml" rel="self"/>
+  <link href="http://livv.github.io/"/>
+  <updated>2014-12-13T14:42:35+08:00</updated>
+  <id>http://livv.github.io/</id>
+  <author>
+    <name><![CDATA[vvlee]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[MAC下Android的Eclipse开发环境的搭建]]></title>
+    <link href="http://livv.github.io/blog/2013/01/08/mac-android-eclipse/"/>
+    <updated>2013-01-08T23:52:00+08:00</updated>
+    <id>http://livv.github.io/blog/2013/01/08/mac-android-eclipse</id>
+    <content type="html"><![CDATA[<h4>一．Eclipse的下载</h4>
+
+<p>   到网站：<a href="http://www.eclipse.org/downloads/">http://www.eclipse.org/downloads/</a>，由于我们是用Java开发的所以步骤如下：</p>
+
+<ol>
+<li><p>找到“Eclipse IDE for java Developers”此处右上角会根据你当前使用的系统自动选择，Mac下就会自动选择位“Mac OS X（Cocoa）”</p></li>
+<li><p>然后点击右边的“Mac OS X 64bit”（这里我的Pro是i5处理器可以用64位的），根据你的机器也可以选择“Mac OS X 32bit”进行下载。</p></li>
+</ol>
+
+
+<h4>二．安装ADT</h4>
+
+<p>   <strong><em>ADT</em></strong>是Android应用程序的开发环境</p>
+
+<ol>
+<li><p>点击菜单中的Help ——> Install New Software⋯ ;</p></li>
+<li><p>在弹出的对话框中有个“Work with”，在右边的输入栏中输入：<code>https://dl-ssl.google.com/android/eclipse/</code> 然后下面就会pending出来一个“Developer Tools”，勾选上，然后一路的Next下去就可以安装完成。(如果想开发NDK，顺便选上NDK plugins)</p></li>
+</ol>
+
+
+<h4>三．设定ADT</h4>
+
+<p>   在菜单栏Refactor中如果能看到Android的标签表示ADT安装成功。</p>
+
+<ol>
+<li><p>下载Android SDK、NDK（通过HomeBrew安装）</p></li>
+<li><p>安装Android SDK，然后在菜单栏Eclipse —> Preferences（偏好设置）,会弹出一个Preferences对话框，选Android，然后在SDK Loaction中填入刚下载的SDK的路径或者点击右边的Browser选择。</p></li>
+<li><p>生成模拟器，菜单栏Window —> Android SDK and AVD Manger 会弹出对话框，然后在对话框中选择new开始按自己的需求新建模拟器，至此就大功告成了！</p></li>
+</ol>
+
+
+<blockquote><p>本该淡淡然~~~</p></blockquote>
+]]></content>
+  </entry>
+  
+</feed>

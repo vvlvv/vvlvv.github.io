@@ -1,1 +1,1204 @@
-My Octopress Page is coming soon &hellip;
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>人生短短数十载</title>
+  <meta name="author" content="vvlee">
+
+  
+  <meta name="description" content="iPhone 默认的液晶时钟效果很是经典，如果您想在自己的应用里显示该时钟，可以用以下代码 1
+[UIFont fontWithName:@"DBLCDTempBlack" size:58] 此外，类似 DBLCDTempBlack 的可用字体列表： 1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11 &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://livv.github.io">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="人生短短数十载" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">人生短短数十载</a></h1>
+  
+    <h2>本该淡淡然</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:livv.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/07/17/iphone-lcd-clock-use-system-font/">Iphone Lcd Clock Use System Font</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2013-07-17T22:16:00+08:00'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>17</span><span class='date-suffix'>th</span>, <span class='date-year'>2013</span></span> <span class='time'>10:16 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>iPhone 默认的液晶时钟效果很是经典，如果您想在自己的应用里显示该时钟，可以用以下代码</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>[UIFont fontWithName:@"DBLCDTempBlack" size:58]</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>此外，类似 DBLCDTempBlack 的可用字体列表：</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+<span class='line-number'>60</span>
+<span class='line-number'>61</span>
+<span class='line-number'>62</span>
+<span class='line-number'>63</span>
+<span class='line-number'>64</span>
+<span class='line-number'>65</span>
+<span class='line-number'>66</span>
+<span class='line-number'>67</span>
+<span class='line-number'>68</span>
+<span class='line-number'>69</span>
+<span class='line-number'>70</span>
+<span class='line-number'>71</span>
+<span class='line-number'>72</span>
+<span class='line-number'>73</span>
+<span class='line-number'>74</span>
+<span class='line-number'>75</span>
+<span class='line-number'>76</span>
+<span class='line-number'>77</span>
+<span class='line-number'>78</span>
+<span class='line-number'>79</span>
+<span class='line-number'>80</span>
+<span class='line-number'>81</span>
+<span class='line-number'>82</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Family name: AppleGothic
+</span><span class='line'>Font name: AppleGothic
+</span><span class='line'>Family name: Hiragino Kaku Gothic ProN
+</span><span class='line'>Font name: HiraKakuProN-W6
+</span><span class='line'>Font name: HiraKakuProN-W3
+</span><span class='line'>Family name: Arial Unicode MS
+</span><span class='line'>Font name: ArialUnicodeMS
+</span><span class='line'>Family name: Heiti K
+</span><span class='line'>Font name: STHeitiK-Medium
+</span><span class='line'>Font name: STHeitiK-Light
+</span><span class='line'>Family name: DB LCD Temp
+</span><span class='line'>Font name: DBLCDTempBlack
+</span><span class='line'>Family name: Helvetica
+</span><span class='line'>Font name: Helvetica-Oblique
+</span><span class='line'>Font name: Helvetica-BoldOblique
+</span><span class='line'>Font name: Helvetica
+</span><span class='line'>Font name: Helvetica-Bold
+</span><span class='line'>Family name: Marker Felt
+</span><span class='line'>Font name: MarkerFelt-Thin
+</span><span class='line'>Family name: Times New Roman
+</span><span class='line'>Font name: TimesNewRomanPSMT
+</span><span class='line'>Font name: TimesNewRomanPS-BoldMT
+</span><span class='line'>Font name: TimesNewRomanPS-BoldItalicMT
+</span><span class='line'>Font name: TimesNewRomanPS-ItalicMT
+</span><span class='line'>Family name: Verdana
+</span><span class='line'>Font name: Verdana-Bold
+</span><span class='line'>Font name: Verdana-BoldItalic
+</span><span class='line'>Font name: Verdana
+</span><span class='line'>Font name: Verdana-Italic
+</span><span class='line'>Family name: Georgia
+</span><span class='line'>Font name: Georgia-Bold
+</span><span class='line'>Font name: Georgia
+</span><span class='line'>Font name: Georgia-BoldItalic
+</span><span class='line'>Font name: Georgia-Italic
+</span><span class='line'>Family name: Arial Rounded MT Bold
+</span><span class='line'>Font name: ArialRoundedMTBold
+</span><span class='line'>Family name: Trebuchet MS
+</span><span class='line'>Font name: TrebuchetMS-Italic
+</span><span class='line'>Font name: TrebuchetMS
+</span><span class='line'>Font name: Trebuchet-BoldItalic
+</span><span class='line'>Font name: TrebuchetMS-Bold
+</span><span class='line'>Family name: Heiti TC
+</span><span class='line'>Font name: STHeitiTC-Light
+</span><span class='line'>Font name: STHeitiTC-Medium
+</span><span class='line'>Family name: Geeza Pro
+</span><span class='line'>Font name: GeezaPro-Bold
+</span><span class='line'>Font name: GeezaPro
+</span><span class='line'>Family name: Courier
+</span><span class='line'>Font name: Courier
+</span><span class='line'>Font name: Courier-BoldOblique
+</span><span class='line'>Font name: Courier-Oblique
+</span><span class='line'>Font name: Courier-Bold
+</span><span class='line'>Family name: Arial
+</span><span class='line'>Font name: ArialMT
+</span><span class='line'>Font name: Arial-BoldMT
+</span><span class='line'>Font name: Arial-BoldItalicMT
+</span><span class='line'>Font name: Arial-ItalicMT
+</span><span class='line'>Family name: Heiti J
+</span><span class='line'>Font name: STHeitiJ-Medium
+</span><span class='line'>Font name: STHeitiJ-Light
+</span><span class='line'>Family name: Arial Hebrew
+</span><span class='line'>Font name: ArialHebrew
+</span><span class='line'>Font name: ArialHebrew-Bold
+</span><span class='line'>Family name: Courier New
+</span><span class='line'>Font name: CourierNewPS-BoldMT
+</span><span class='line'>Font name: CourierNewPS-ItalicMT
+</span><span class='line'>Font name: CourierNewPS-BoldItalicMT
+</span><span class='line'>Font name: CourierNewPSMT
+</span><span class='line'>Family name: Zapfino
+</span><span class='line'>Font name: Zapfino
+</span><span class='line'>Family name: American Typewriter
+</span><span class='line'>Font name: AmericanTypewriter
+</span><span class='line'>Font name: AmericanTypewriter-Bold
+</span><span class='line'>Family name: Heiti SC
+</span><span class='line'>Font name: STHeitiSC-Medium
+</span><span class='line'>Font name: STHeitiSC-Light
+</span><span class='line'>Family name: Helvetica Neue
+</span><span class='line'>Font name: HelveticaNeue
+</span><span class='line'>Font name: HelveticaNeue-Bold
+</span><span class='line'>Family name: Thonburi
+</span><span class='line'>Font name: Thonburi-Bold
+</span><span class='line'>Font name: Thonburi</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/07/03/mac-os-terminal-skill/">Mac Os Terminal Skill</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2013-07-03T10:35:00+08:00'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>3</span><span class='date-suffix'>rd</span>, <span class='date-year'>2013</span></span> <span class='time'>10:35 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>control+u</h2>
+
+<p>如果你在一条终端命令中发现有输入错误的话，那么用 control+u 快捷键可以直接删除这一整条命令，然后你就可以重新输入。</p>
+
+<h2>mkdir</h2>
+
+<p>很多人可能会很熟悉在 mkdir 是在「终端」中创建文件夹的工具，比如mkdir ./abc，即可在当前目录创建一个名为 abc 的文件夹。但如果想要建立更多层级的目录呢？就需要用 mkdir -p 命令来解决，比如：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>mkdir -p ./abc/123/guomii/xxx</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>!!</h2>
+
+<p>有时候，你写了一条长长的命令，按回车之后发现没有执行权限，需要在命令前添加 sudo，这时你可能要崩溃。不过其实可以用 <code>sudo !!</code> 这条命令来解决，它执行的效果和 sudo {上一条命令} 是一样的。</p>
+
+<p>另外，! 在「终端」中还有一个妙用——它可以用来执行你最后一次以特定字母开头的命令。比如你在一个「终端」会话中已经执行过ls,mkdir,find,chown 等多条命令。这时你可以用 !l 来执行 ls，用 !f 来执行 find…大家都看懂了吧？(very cool)</p>
+
+<h2>history</h2>
+
+<p>用 history 命令可以显示你最近执行过的命令历史记录，你还可以指定显示条数，比如 history 20即可显示最近的20条命令历史记录。此外，你还可以筛选包含特定字符的命令，比如用 <code>history | grep mk</code>，就可以只显示历史记录中包含 mk 的命令。</p>
+
+<h2>&amp;&amp;</h2>
+
+<p>&amp;&amp; 可以将两条命令合并成一条命令，其实我们在之前的文章中，已经多次应用过这种写法了，大家可以返回去看看。</p>
+
+<h2>reset</h2>
+
+<p>reset 的作用很简单——将目前「终端」屏幕上的内容清空，就好像刚刚打开终端一样。（不如新建一个标签，然后关掉之前的，感觉这样更快捷。）</p>
+
+<p>其实输入命令远没有快捷键方便，“control+l” 可以清屏，&#8221;command+k&#8221;可以全部清除。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/06/27/wget-tutorials/">Wget Tutorials</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2013-06-27T15:05:00+08:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>27</span><span class='date-suffix'>th</span>, <span class='date-year'>2013</span></span> <span class='time'>3:05 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Wget是一种很好用的因特网下载工具，他具有的很多特性是其他工具所不能比拟的，再者他是一个轻量级可配置的下载工具。</p>
+
+<p>本文结合例子介绍Windows下wget的多种下载方法和用途。</p>
+
+<p>1、用Wget下载单个文件</p>
+
+<p>下载的时候会显示：</p>
+
+<p>　　~文件的大小、连接状态、连接地址以及文件的大小</p>
+
+<p>　　~保存的名称</p>
+
+<p>　　~下载进度条</p>
+
+<p>　　~下载速度、时间，还有多少未下载</p>
+
+<p>例如我下载editplus时输入</p>
+
+<p>D:\Hack stuff\wget>wget <a href="http://software-files-a.cnet.com/s/software/12/32/81/47/">http://software-files-a.cnet.com/s/software/12/32/81/47/</a>
+epp331.exe?token=1329413178_4553efa847829f3ecef10c1bc256fcc0&amp;lop=link&amp;ptype=3001
+&amp;ontid=2352&amp;siteId=4&amp;edId=3&amp;spi=537d5d5485f688682d82c481c4fb15a1&amp;pid=12328147&amp;ps
+id=10018241&amp;&amp;fileName=epp331.exe
+则下载时会显示以下内容</p>
+
+<p>D:\Hack stuff\wget>wget <a href="http://software-files-a.cnet.com/s/software/12/32/81/47/">http://software-files-a.cnet.com/s/software/12/32/81/47/</a>
+epp331.exe?token=1329413178_4553efa847829f3ecef10c1bc256fcc0&amp;lop=link&amp;ptype=3001
+&amp;ontid=2352&amp;siteId=4&amp;edId=3&amp;spi=537d5d5485f688682d82c481c4fb15a1&amp;pid=12328147&amp;ps
+id=10018241&amp;&amp;fileName=epp331.exe
+&ndash;2012-02-16 15:28:50&ndash;  <a href="http://software-files-a.cnet.com/s/software/12/32/81/47">http://software-files-a.cnet.com/s/software/12/32/81/47</a>
+/epp331.exe?token=1329413178_4553efa847829f3ecef10c1bc256fcc0
+Resolving software-files-a.cnet.com&hellip; 204.2.171.33, 204.2.171.35
+Connecting to software-files-a.cnet.com|204.2.171.33|:80&hellip; connected.
+HTTP request sent, awaiting response&hellip; 200 OK
+Length: 1766464 (1.7M) [application/octet-stream]
+Saving to: `epp331.exe@token=1329413178_4553efa847829f3ecef10c1bc256fcc0&#8217;</p>
+
+<p>18% [======>                                ] 335,238     20.5K/s  eta 64s</p>
+
+<p>2、用Wget-O下载可以为下载的文件指定另外一个名字</p>
+
+<p>默认情况下wget会用最后的斜线后面的所有字符来命名下载下来的文件，如上例所示保存的文件名为</p>
+
+<p>Saving to: `epp331.exe@token=1329413178_4553efa847829f3ecef10c1bc256fcc0&#8217;
+这不是我们所想要的，我们可以用-O选项来改变将文件保存为editplus.exe</p>
+
+<p>D:\Hack stuff\wget>wget -O editplus.exe <a href="http://software-files-a.cnet.com/s/software/12/32/81/47/">http://software-files-a.cnet.com/s/software/12/32/81/47/</a>
+epp331.exe?token=1329413178_4553efa847829f3ecef10c1bc256fcc0&amp;lop=link&amp;ptype=3001
+&amp;ontid=2352&amp;siteId=4&amp;edId=3&amp;spi=537d5d5485f688682d82c481c4fb15a1&amp;pid=12328147&amp;ps
+id=10018241&amp;&amp;fileName=epp331.exe</p>
+
+<p>3、用Wget &ndash;limit-rate指定下载的速度</p>
+
+<p>如下面这个例子限制速度为300k</p>
+
+<p>D:\Hack stuff\wget>wget &ndash;limit-rate=300k <a href="http://downloads.sourceforge.net/project/boost/boost-doc">http://downloads.sourceforge.net/project/boost/boost-doc</a>
+s/1.47.0/boost_1_47_pdf.zip?r=http%3A%2F%2Fsourceforge.net%2Fprojects%2Fboost%2F
+&amp;ts=1329379231&amp;use_mirror=nchc</p>
+
+<p>4、续传下载用Wget -c</p>
+
+<p>当你在下载一个大文件时突然中断了那么这个选项就派上用场了</p>
+
+<p>D:\Hack stuff\wget>wget -c <a href="http://downloads.sourceforge.net/project/boost/boost-doc">http://downloads.sourceforge.net/project/boost/boost-doc</a>
+s/1.47.0/boost_1_47_pdf.zip?r=http%3A%2F%2Fsourceforge.net%2Fprojects%2Fboost%2F
+&amp;ts=1329379231&amp;use_mirror=nchc</p>
+
+<p>5、后台下载用wget -b</p>
+
+<p>用此选项下载时只会初始化下载而不会显示相关信息</p>
+
+<p>D:\Hack stuff\wget>wget -b <a href="http://downloads.sourceforge.net/project/boost/boost-">http://downloads.sourceforge.net/project/boost/boost-</a>
+docs/1.47.0/boost_1_47_pdf.zip?r=http%3A%2F%2Fsourceforge.net%2Fprojects%2Fboost
+%2F&amp;ts=1329379231&amp;use_mirror=nchc
+Continuing in background, pid 6132.
+Output will be written to `wget-log&#8217;.
+下载以后会在wget目录下生产wget-log文件，用记事本打开可查看里面的内容如下所示</p>
+
+<p>&ndash;2012-02-16 16:12:55&ndash;  <a href="http://downloads.sourceforge.net/project/boost/boost-docs/1.47.0/boost_1_47_pdf.zip?r=http%3A%2F%2Fsourceforge.net%2Fprojects%2Fboost%2F">http://downloads.sourceforge.net/project/boost/boost-docs/1.47.0/boost_1_47_pdf.zip?r=http%3A%2F%2Fsourceforge.net%2Fprojects%2Fboost%2F</a>
+Resolving downloads.sourceforge.net&hellip; 216.34.181.59
+Connecting to downloads.sourceforge.net|216.34.181.59|:80&hellip; connected.
+HTTP request sent, awaiting response&hellip; 302 Found
+Location: <a href="http://nchc.dl.sourceforge.net/project/boost/boost-docs/1.47.0/boost_1_47_pdf.zip">http://nchc.dl.sourceforge.net/project/boost/boost-docs/1.47.0/boost_1_47_pdf.zip</a> [following]
+&ndash;2012-02-16 16:12:56&ndash;  <a href="http://nchc.dl.sourceforge.net/project/boost/boost-docs/1.47.0/boost_1_47_pdf.zip">http://nchc.dl.sourceforge.net/project/boost/boost-docs/1.47.0/boost_1_47_pdf.zip</a>
+Resolving nchc.dl.sourceforge.net&hellip; 211.79.60.17
+Connecting to nchc.dl.sourceforge.net|211.79.60.17|:80&hellip; connected.
+HTTP request sent, awaiting response&hellip; 200 OK
+Length: 31421410 (30M) [application/zip]
+Saving to: `boost_1_47_pdf.zip.4&#8217;</p>
+
+<pre><code> 0K .......... .......... .......... .......... ..........  0% 19.7K 25m51s
+50K .......... .......... .......... .......... ..........  0% 29.1K 21m40s
+</code></pre>
+
+<p>   100K &hellip;&hellip;&hellip;. &hellip;&hellip;&hellip;. &hellip;&hellip;&hellip;. &hellip;&hellip;&hellip;. &hellip;&hellip;&hellip;.  0% 20.8K 22m35s
+   150K &hellip;&hellip;&hellip;. &hellip;&hellip;&hellip;. &hellip;&hellip;&hellip;. &hellip;&hellip;&hellip;. &hellip;&hellip;&hellip;.  0% 19.5K 23m26s
+   200K &hellip;&hellip;&hellip;. &hellip;&hellip;&hellip;. &hellip;&hellip;&hellip;. &hellip;&hellip;&hellip;. &hellip;&hellip;&hellip;.  0% 18.4K 24m13s
+   250K &hellip;&hellip;&hellip;. &hellip;&hellip;&hellip;. &hellip;&hellip;&hellip;. &hellip;&hellip;&hellip;. &hellip;&hellip;&hellip;.  0% 20.8K 24m13s
+   300K &hellip;&hellip;&hellip;. &hellip;&hellip;&hellip;. &hellip;&hellip;&hellip;. &hellip;&hellip;&hellip;. &hellip;&hellip;&hellip;.  1% 18.2K 24m41s
+   350K &hellip;&hellip;&hellip;. &hellip;&hellip;&hellip;. &hellip;&hellip;&hellip;. &hellip;&hellip;&hellip;. &hellip;&hellip;&hellip;.  1% 23.5K 24m16s</p>
+
+<p>6、测试你要下载的地址用Wget &ndash;spider</p>
+
+<p>wget &ndash;spider DOWNLOAD-URL
+如果所给URL是正确的则会显示</p>
+
+<p>Resolving downloads.sourceforge.net&hellip; 216.34.181.59
+Connecting to downloads.sourceforge.net|216.34.181.59|:80&hellip; connected.
+HTTP request sent, awaiting response&hellip; 302 Found
+Location: <a href="http://ncu.dl.sourceforge.net/project/boost/boost-docs/1.47.0/boost_1_">http://ncu.dl.sourceforge.net/project/boost/boost-docs/1.47.0/boost_1_</a>
+47_pdf.zip [following]
+Spider mode enabled. Check if remote file exists.
+&ndash;2012-02-16 16:21:08&ndash;  <a href="http://ncu.dl.sourceforge.net/project/boost/boost-docs/">http://ncu.dl.sourceforge.net/project/boost/boost-docs/</a>
+1.47.0/boost_1_47_pdf.zip
+Resolving ncu.dl.sourceforge.net&hellip; 140.115.17.45
+Connecting to ncu.dl.sourceforge.net|140.115.17.45|:80&hellip; connected.
+HTTP request sent, awaiting response&hellip; 200 OK
+Length: 31421410 (30M) [application/zip]
+Remote file exists.
+否则显示</p>
+
+<p>Spider mode enabled. Check if remote file exists.
+&ndash;2012-02-16 16:23:06&ndash;  <a href="http://downloads.sourceforge.net/project/boost/boost-do">http://downloads.sourceforge.net/project/boost/boost-do</a>
+cs/1.47.0/boost_1_47_pdf222.zip?r=http%3A%2F%2Fsourceforge.net%2Fprojects%2Fboos
+t%2F
+Resolving downloads.sourceforge.net&hellip; 216.34.181.59
+Connecting to downloads.sourceforge.net|216.34.181.59|:80&hellip; connected.
+HTTP request sent, awaiting response&hellip; 404 Not Found
+Remote file does not exist &ndash; broken link!!!</p>
+
+<p>7、增加重连次数用Wget -tries</p>
+
+<p>在网络有问题的情况次选项尤其有用，默认是wget会重连20次以成功完成下载，我们可以把他增加为我们期待的次数</p>
+
+<p>wget &ndash;tries=100 DOWNLOAD-URL</p>
+
+<p>8、下载多个文件/URLS用wget -i</p>
+
+<p>首先把所有要下载的文件或者URL存到一个记事本中，比如aa.txt，里面内容如下</p>
+
+<p>URL1
+URL2
+URL3
+URL4
+接下来输入如下代码就可以批量下载了</p>
+
+<p>wget -i aa.txt</p>
+
+<p>9、下载一个完整的网站用wget -mirror</p>
+
+<p>以下实现是你想完整的下载一个网站用于本地浏览</p>
+
+<p>wget &ndash;mirror  -p &ndash;convert-links -P LOCAL-DIR WEBSITE-URL
+&ndash;mirror:打开镜像选项</p>
+
+<p>-p:下载所有用于显示给定网址所必须的文件</p>
+
+<p>&ndash;convert-links：下载以后，转换链接用于本地显示</p>
+
+<p>-P LOCAL_DIR：保存所有的文件或目录到指定的目录下</p>
+
+<p>10、保存输出到日志文件而不是标准输出用wget -o</p>
+
+<p>当你想要把信息保存到一个文件而不是在终端显示时用以下代码。</p>
+
+<p>wget -o download.log DOWNLOAD-URL</p>
+
+<p>11、当超过指定大小时终止下载用wget -Q</p>
+
+<p>当文件已下载10M，此时你想停止下载可以使用下面的命令行</p>
+
+<p>wget -Q10m -i FILE-WHICH-HAS-URLS
+注意：此选项只能在下载多个文件时有用，当你下载一个文件时没用。</p>
+
+<p>12、下载特定文件类型的文件用wget -r -A</p>
+
+<p>你可以用此方法下载一下文件：</p>
+
+<p>~从一个网站下载所有图片
+~从一个网站下载所有视频</p>
+
+<p>~从一个网站下载所有PDF文件</p>
+
+<p>wget -r -A.pdf <a href="http://url-to-webpage-with-pdfs/">http://url-to-webpage-with-pdfs/</a></p>
+
+<p>13、指定不下载某一类型的文件用wget &ndash;reject</p>
+
+<p>你发现一个网站很有用，但是你不想下载上面的图片，因为太占流量，此时你可以用如下命令。</p>
+
+<p>wget &ndash;reject=gif WEBSITE-TO-BE-DOWNLOADED</p>
+
+<p>14、用wget实现FTP下载</p>
+
+<p>匿名FTP下载用</p>
+
+<p>wget ftp-url
+有用户名和密码的FTP下载</p>
+
+<p>wget &ndash;ftp-user=USERNAME &ndash;ftp-password=PASSWORD DOWNLOAD-URL</p>
+
+<p>15、wget下载有的资源时必须用选项 &ndash;no-check-certificate，否则会提示没有认证不允许下载</p>
+
+<p>wget &ndash;no-check-certificate URL</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/06/27/uploade2appstore-via-command-line/">上传appstore通过命令行</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2013-06-27T13:41:00+08:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>27</span><span class='date-suffix'>th</span>, <span class='date-year'>2013</span></span> <span class='time'>1:41 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><blockquote><p>未验证（先记录下来，后续研究）<a href="http://stackoverflow.com/questions/11888122/how-to-upload-an-ios-app-to-the-app-store-via-command-line">来源</a></p></blockquote>
+
+<ul>
+<li><p>Make sure you have an application in &ldquo;waiting to upload&rdquo; state.</p></li>
+<li><p>Create a new keychain Item Named: Xcode:itunesconnect.apple.com provide your credentials to itunes connect.</p></li>
+<li><p>From the command line:</p></li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>xcrun -sdk iphoneos Validation -online -upload -verbose "path to ipa"</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>This is perfect. I've lots of clients and customers. I want to upload apps on behalf of my clients/customers, how can I create respective key chain items and provide them during "xcrun" command? – Satyam svv Dec 1 '12 at 2:28
+</span><span class='line'>
+</span><span class='line'>you can create a ad-hoc key before running xcrun and discart it after the upload is finished security add-generic-password -s Xcode:itunesconnect.apple.com -a LOGIN -w PASSWORD -U xcrun -sdk iphoneos Validation -online -upload -verbose "path to ipa" security delete-generic-password -s Xcode:itunesconnect.apple.com -a LOGIN</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/06/21/git-log-geek/">Git Log Geek</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2013-06-21T14:21:00+08:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>21</span><span class='date-suffix'>st</span>, <span class='date-year'>2013</span></span> <span class='time'>2:21 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><ul>
+<li>打开.gitconfig文件(该文件在用户目录下面)</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>vim .gitconfig</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>配置gitconfig</li>
+</ul>
+
+
+<p>在打开的文件中加入下面的命令：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>[alias]
+</span><span class='line'>       lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset' --abbrev-commit</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>查看配置后的log</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git lg</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>在log中查看哪一行被修发了</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git lg -p</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/06/13/mac-terminal-color/">Mac Terminal 彩色</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2013-06-13T13:49:00+08:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>13</span><span class='date-suffix'>th</span>, <span class='date-year'>2013</span></span> <span class='time'>1:49 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h3>彩色化ls的输出</h3>
+
+<p>Mac中BSD的ls命令可以使用-G参数彩色化输出的文件列表，需要配置LSCOLORS环境变量定义颜色，具体配置方法可以输入man ls查看。</p>
+
+<p>不过，我推荐安装Linux使用的GNU Coreutils替换Mac的ls命令，因为：</p>
+
+<ul>
+<li>Coreutils提供了配置工具，定义颜色代码更加方便；</li>
+<li>Coreutils包含的不仅仅是ls，同时作为Linux用户，我更习惯于使用GNU的各种shell工具。</li>
+</ul>
+
+
+<hr />
+
+<ul>
+<li>通过Homebrew安装Coreutils</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>brew install xz coreutils</span></code></pre></td></tr></table></div></figure>
+
+
+<p>注：Coreutils并不依赖于xz，但它的源码是用xz格式压缩的，安装xz才能解压。</p>
+
+<ul>
+<li>生成颜色定义文件</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>gdircolors --print-database &gt; ~/.dir_colors</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>在<code>~/.bash_profile</code>配置文件中加入以下代码</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>if brew list | grep coreutils &gt; /dev/null ; then
+</span><span class='line'>  PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+</span><span class='line'>  alias ls='ls -F --show-control-chars --color=auto'
+</span><span class='line'>  eval `gdircolors -b $HOME/.dir_colors`
+</span><span class='line'>fi</span></code></pre></td></tr></table></div></figure>
+
+
+<p>gdircolor的作用就是设置ls命令使用的环境变量LS_COLORS（BSD是LSCOLORS），我们可以修改~/.dir_colors自定义文件的颜色，此文件中的注释已经包含各种颜色取值的说明。</p>
+
+<ul>
+<li>grep高亮显示关键字</li>
+</ul>
+
+
+<p>这个很简单，加上<code>--color</code>参数就可以了，为了使用方便，可以在<code>~/.bash_profile</code>配置文件中加上alias定义。</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>alias grep='grep --color'
+</span><span class='line'>alias egrep='egrep --color'
+</span><span class='line'>alias fgrep='fgrep --color'</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Vim语法高亮</li>
+</ul>
+
+
+<p>在Vim中输入命令:syntax on激活语法高亮，若需要Vim启动时自动激活，在<code>~/.vimrc</code>中添加一行<code>syntax on</code>即可。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/06/13/homebrew-uninstall/">Homebrew Uninstall</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2013-06-13T13:15:00+08:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>13</span><span class='date-suffix'>th</span>, <span class='date-year'>2013</span></span> <span class='time'>1:15 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>cd `brew –prefix`
+</span><span class='line'>rm -rf Cellar
+</span><span class='line'>brew prune
+</span><span class='line'>rm -rf Library .git .gitignore bin/brew README.md share/man/man1/brew
+</span><span class='line'>rm -rf ~/Library/Caches/Homebrew</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/06/11/goagent-bitbucket/">Goagent Bitbucket</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2013-06-11T22:39:00+08:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>11</span><span class='date-suffix'>th</span>, <span class='date-year'>2013</span></span> <span class='time'>10:39 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git config --add http.proxy 127.0.0.1:8087
+</span><span class='line'>git config --add https.proxy 127.0.0.1:8087
+</span><span class='line'>git config --add http.sslVerify false
+</span><span class='line'>git config --add https.sslVerify false
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'>url = https://*****@bitbucket.org/****.git
+</span><span class='line'>pushurl = https://****@bitbucket.org/****.git</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/05/31/ios-design-memo-list/">iOS设计元素备忘单</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2013-05-31T09:02:00+08:00'><span class='date'><span class='date-month'>May</span> <span class='date-day'>31</span><span class='date-suffix'>st</span>, <span class='date-year'>2013</span></span> <span class='time'>9:02 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><img src="/images/img/ios_1_resolutions.png">
+<img src="/images/img/ios_2_icons.png">
+<img src="/images/img/ios_3_commonly_used_design_elements.png">
+<img src="/images/img/ios_4_dislplays.png"></p>
+
+<blockquote><p>本该淡淡然~~~</p></blockquote>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/05/08/nspredicate/">NSPredicate 的用法</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2013-05-08T09:22:00+08:00'><span class='date'><span class='date-month'>May</span> <span class='date-day'>8</span><span class='date-suffix'>th</span>, <span class='date-year'>2013</span></span> <span class='time'>9:22 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>一般来说这种情况还是蛮多的，比如你从文件中读入了一个array1，然后想把程序中的一个array2中符合array1中内容的元素过滤出来。
+正 常傻瓜一点就是两个for循环，一个一个进行比较，这样效率不高，而且代码也不好看。
+其实一个循环或者无需循环就可以搞定了，那就需要用搞 NSPredicate这个类了～膜拜此类～</p>
+
+<h5>例子一，一个循环</h5>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>NSArray *arrayFilter = [NSArray arrayWithObjects:@"pict", @"blackrain", @"ip", nil];
+</span><span class='line'>NSArray *arrayContents = [NSArray arrayWithObjects:@"I am a picture.", @"I am a guy", @"I am gagaga", @"ipad", @"iphone", nil];</span></code></pre></td></tr></table></div></figure>
+
+
+<p>我想过滤arrayContents的话只要循环 arrayFilter就好了</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>int i = 0, count = [arrayFilter count];
+</span><span class='line'>for(i = 0; i &lt; count; i ++)
+</span><span class='line'>{
+</span><span class='line'>NSString *arrayItem = (NSString *)[arrayFilter objectAtIndex:i];
+</span><span class='line'>NSPredicate *filterPredicate = [[NSPredicate predicateWithFormat:@"SELF CONTAINS %@", arrayItem];
+</span><span class='line'>NSLog(@"Filtered array with filter %@, %@", arrayItem, [arrayContents filteredArrayUsingPredicate:filterPredicate]);
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<p>当然以上代码中arrayContent最好用mutable 的，这样就可以直接filter了，NSArray是不可修改的。</p>
+
+<h5>例子二，无需循环</h5>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>NSArray *arrayFilter = [NSArray arrayWithObjects:@"abc1", @"abc2", nil];
+</span><span class='line'>NSArray *arrayContent = [NSArray arrayWithObjects:@"a1", @"abc1", @"abc4", @"abc2", nil];
+</span><span class='line'>NSPredicate *thePredicate = [NSPredicate predicateWithFormat:@"NOT (SELF in %@)", arrayFilter];
+</span><span class='line'>[arrayContent filterUsingPredicate:thePredicate];</span></code></pre></td></tr></table></div></figure>
+
+
+<p>这样arrayContent过滤出来的就是不包含 arrayFilter中的所有item了。</p>
+
+<h5>生成文件路径下文件集合列表</h5>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>NSFileManager *fileManager = [NSFileManager defaultManager];
+</span><span class='line'>NSString *defaultPath = [[NSBundle mainBundle] resourcePath];
+</span><span class='line'>NSError *error;
+</span><span class='line'>NSArray *directoryContents = [fileManager contentsOfDirectoryAtPath:defaultPath error:&error]</span></code></pre></td></tr></table></div></figure>
+
+
+<p><code>match的用法</code></p>
+
+<ul>
+<li>简单比较</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>NSString *match = @"imagexyz-999.png";
+</span><span class='line'>NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF == %@", match];
+</span><span class='line'>NSArray *results = [directoryContents filteredArrayUsingPredicate:predicate];﻿</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>match里like的用法（类似Sql中的用法）</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>NSString *match = @"imagexyz*.png";
+</span><span class='line'>NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF like %@", match];
+</span><span class='line'>NSArray *results = [directoryContents filteredArrayUsingPredicate:predicate];﻿</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>大小写比较</li>
+</ul>
+
+
+<p>［c］表示忽略大小写，［d］表示忽略重音，可以在一起使用，如下：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>NSString *match = @"imagexyz*.png";
+</span><span class='line'>NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF like[cd] %@", match];
+</span><span class='line'>NSArray *results = [directoryContents filteredArrayUsingPredicate:predicate];﻿</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>使用正则</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>NSString *match = @"imagexyz-\\d{3}\\.png";  //imagexyz－123.png
+</span><span class='line'>NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF matches %@", match];
+</span><span class='line'>NSArray *results = [directoryContents filteredArrayUsingPredicate:predicate];﻿</span></code></pre></td></tr></table></div></figure>
+
+
+<h5>总结：</h5>
+
+<ol>
+<li>当使用聚合类的操作符时是可以不需要循环的</li>
+<li>当使用单个比较类的操作符时可以一个循环来搞定</li>
+</ol>
+
+
+<p>PS，例子 一中尝试使用[@&ldquo;SELF CONTAINS %@&rdquo;, arrayFilter] 来过滤会挂调，因为CONTAINS时字符串比较操作符，不是集合操作符。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+      <a class="prev" href="/posts/2">&larr; Older</a>
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/07/17/iphone-lcd-clock-use-system-font/">Iphone Lcd Clock Use System Font</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/07/03/mac-os-terminal-skill/">Mac Os Terminal Skill</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/06/27/wget-tutorials/">Wget Tutorials</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/06/27/uploade2appstore-via-command-line/">上传appstore通过命令行</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/06/21/git-log-geek/">Git Log Geek</a>
+      </li>
+    
+  </ul>
+</section>
+  
+<section>  
+  <a target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=aR8fGgEIDQYeKR8AGUcYGEcKBgQ" style="text-decoration:none;"><img src="http://rescdn.qqmail.com/zh_CN/htmledition/images/function/qm_open/ico_mailme_01.png"/></a>
+</section>  
+  
+
+  
+<section>  
+  <h1>新浪微博</h1>  
+  <ul id="weibo">  
+    <li>  
+      <iframe   
+        width="100%"   
+        height="550"   
+        class="share_self"   
+        frameborder="0"   
+        scrolling="no"   
+        src="http://widget.weibo.com/weiboshow/index.php?width=0&height=550&ptype=1&speed=0&skin=&isTitle=0&noborder=1&isWeibo=1&isFans=&uid=2099590271&verifier=c77742aa">  
+      </iframe>  
+    </li>  
+  </ul>  
+</section>  
+  
+
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/livv">@livv</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'livv',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - vvlee -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'vvblog';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

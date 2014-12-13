@@ -1,0 +1,344 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Linux Crontab - 人生短短数十载</title>
+  <meta name="author" content="vvlee">
+
+  
+  <meta name="description" content="每个系统有一个全局 crontab 文件, 位于 /etc/crontab. 每个用户可以有自己独立的 crontab 文件, 位于 /var/spool/cron/crontabs , 但该文件并不设计为手动编辑的, 正确的方法是使用 crontab -e 来编辑自己的 crontab 文件. &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://livv.github.io/blog/2012/03/01/linux-crontab">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="人生短短数十载" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">人生短短数十载</a></h1>
+  
+    <h2>本该淡淡然</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:livv.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Linux Crontab</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2012-03-01T10:15:00+08:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>1</span><span class='date-suffix'>st</span>, <span class='date-year'>2012</span></span> <span class='time'>10:15 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>每个系统有一个全局 crontab 文件, 位于 /etc/crontab.</p>
+
+<p>每个用户可以有自己独立的 crontab 文件, 位于 /var/spool/cron/crontabs , 但该文件并不设计为手动编辑的, 正确的方法是使用 crontab -e 来编辑自己的 crontab 文件.</p>
+
+<p>编辑自己用户的 <code>crontab</code> 文件</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>   crontab -e
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>格式是:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>   <span class="c"># m h dom mon dow command</span>
+</span><span class='line'>        * *  *   *   *  curl http://yiriji.com/admin/cron<span class="sb">`</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>m, 分钟</li>
+<li>h, 小时</li>
+<li>dom, day of month, 日期</li>
+<li>mon, month, 月份</li>
+<li>dow, day of week, 星期</li>
+</ul>
+
+
+<p>和全局的 crontab 不同的是, 没有用户名这一列</p>
+
+<h3>Ubuntu中的全局crontab文件示范:</h3>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>   <span class="c"># m h dom mon dow user  command</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="c"># 每天每个小时的第17分执行 /etc/cron.hourly 文件下的所有可执行程序或脚本</span>
+</span><span class='line'>  <span class="m">17</span> *    * * *   root    <span class="nb">cd</span> / <span class="o">&amp;&amp;</span> run-parts --report /etc/cron.hourly
+</span><span class='line'>
+</span><span class='line'>  <span class="c"># 每天6点25分执行</span>
+</span><span class='line'>  <span class="m">25</span> <span class="m">6</span>    * * *   root    <span class="nb">test</span> -x /usr/sbin/anacron <span class="o">||</span> <span class="o">(</span> <span class="nb">cd</span> / <span class="o">&amp;&amp;</span> run-parts --report /etc/cron.daily <span class="o">)</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="c"># 每个星期天的6点47分执行</span>
+</span><span class='line'>  <span class="m">47</span> <span class="m">6</span>    * * <span class="m">7</span>   root    <span class="nb">test</span> -x /usr/sbin/anacron <span class="o">||</span> <span class="o">(</span> <span class="nb">cd</span> / <span class="o">&amp;&amp;</span> run-parts --report /etc/cron.weekly <span class="o">)</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="c"># 每月1号6点52分执行</span>
+</span><span class='line'>  <span class="m">52</span> <span class="m">6</span>    <span class="m">1</span> * *   root    <span class="nb">test</span> -x /usr/sbin/anacron <span class="o">||</span> <span class="o">(</span> <span class="nb">cd</span> / <span class="o">&amp;&amp;</span> run-parts --report /etc/cron.monthly <span class="o">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>run-parts 的意思就是执行该文件夹下所有可执行程序或脚本.</p>
+
+<blockquote><p>本该淡淡然~~~</p></blockquote>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">vvlee</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2012-03-01T10:15:00+08:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>1</span><span class='date-suffix'>st</span>, <span class='date-year'>2012</span></span> <span class='time'>10:15 am</span></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/linux/'>linux</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://livv.github.io/blog/2012/03/01/linux-crontab/" data-via="" data-counturl="http://livv.github.io/blog/2012/03/01/linux-crontab/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/02/17/toggle-hidden-files/" title="Previous Post: 如何制作Snow Leopard切换隐藏文件显示状态的快捷键(转帖)">&laquo; 如何制作Snow Leopard切换隐藏文件显示状态的快捷键(转帖)</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2012/03/07/mac-google-plus/" title="Next Post: mac 不翻墙访问 google+">mac 不翻墙访问 google+ &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/07/17/iphone-lcd-clock-use-system-font/">Iphone Lcd Clock Use System Font</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/07/03/mac-os-terminal-skill/">Mac Os Terminal Skill</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/06/27/wget-tutorials/">Wget Tutorials</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/06/27/uploade2appstore-via-command-line/">上传appstore通过命令行</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/06/21/git-log-geek/">Git Log Geek</a>
+      </li>
+    
+  </ul>
+</section>
+  
+<section>  
+  <a target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=aR8fGgEIDQYeKR8AGUcYGEcKBgQ" style="text-decoration:none;"><img src="http://rescdn.qqmail.com/zh_CN/htmledition/images/function/qm_open/ico_mailme_01.png"/></a>
+</section>  
+  
+
+  
+<section>  
+  <h1>新浪微博</h1>  
+  <ul id="weibo">  
+    <li>  
+      <iframe   
+        width="100%"   
+        height="550"   
+        class="share_self"   
+        frameborder="0"   
+        scrolling="no"   
+        src="http://widget.weibo.com/weiboshow/index.php?width=0&height=550&ptype=1&speed=0&skin=&isTitle=0&noborder=1&isWeibo=1&isFans=&uid=2099590271&verifier=c77742aa">  
+      </iframe>  
+    </li>  
+  </ul>  
+</section>  
+  
+
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/livv">@livv</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'livv',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - vvlee -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'vvblog';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://livv.github.io/blog/2012/03/01/linux-crontab/';
+        var disqus_url = 'http://livv.github.io/blog/2012/03/01/linux-crontab/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

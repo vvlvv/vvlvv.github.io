@@ -1,0 +1,348 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>密码安全存储解决方案 - 人生短短数十载</title>
+  <meta name="author" content="vvlee">
+
+  
+  <meta name="description" content="来源月光博客 自己留个备份 ^_^ 菜鸟方案： 　　直接存储用户密码的明文或者将密码加密存储。 　　曾经有一次我在某知名网站重置密码，结果邮件中居然直接包含以前设置过的密码。我和客服咨询为什么直接将密码发送给用户，客服答曰：“减少用户步骤，用户体验更好”；再问“管理员是否可以直接获知我的密码”， &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://livv.github.io/blog/2013/01/23/store-password-security">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="人生短短数十载" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">人生短短数十载</a></h1>
+  
+    <h2>本该淡淡然</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:livv.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">密码安全存储解决方案</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2013-01-23T15:40:00+08:00'><span class='date'><span class='date-month'>Jan</span> <span class='date-day'>23</span><span class='date-suffix'>rd</span>, <span class='date-year'>2013</span></span> <span class='time'>3:40 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>来源<a href="http://www.williamlong.info/archives/3224.html">月光博客</a></p>
+
+<p>自己留个备份 ^_^</p>
+
+<h3>菜鸟方案：</h3>
+
+<p>　　直接存储用户密码的明文或者将密码加密存储。</p>
+
+<p>　　曾经有一次我在某知名网站重置密码，结果邮件中居然直接包含以前设置过的密码。我和客服咨询为什么直接将密码发送给用户，客服答曰：“减少用户步骤，用户体验更好”；再问“管理员是否可以直接获知我的密码”， 客服振振有词：“我们用XXX算法加密过的，不会有问题的”。 殊不知，密码加密后一定能被解密获得原始密码，因此，该网站一旦数据库泄露，所有用户的密码本身就大白于天下。</p>
+
+<p>　　以后看到这类网站，大家最好都绕道而走，因为一家“暴库”，全部遭殃。
+　　</p>
+
+<h3>入门方案：</h3>
+
+<p>　　将明文密码做单向哈希后存储。</p>
+
+<p>　　单向哈希算法有一个特性，无法通过哈希后的摘要(digest)恢复原始数据，这也是“单向”二字的来源，这一点和所有的加密算法都不同。常用的单向哈希算法包括SHA-256，SHA-1，MD5等。例如，对密码“passwordhunter”进行SHA-256哈希后的摘要(digest)如下：
+“bbed833d2c7805c4bf039b140bec7e7452125a04efa9e0b296395a9b95c2d44c”</p>
+
+<p>　　可能是“单向”二字有误导性，也可能是上面那串数字唬人，不少人误以为这种方式很可靠， 其实不然。</p>
+
+<p>　　单向哈希有两个特性：</p>
+
+<p>　　1）从同一个密码进行单向哈希，得到的总是唯一确定的摘要</p>
+
+<p>　　2）计算速度快。随着技术进步，尤其是显卡在高性能计算中的普及，一秒钟能够完成数十亿次单向哈希计算</p>
+
+<p>　　结合上面两个特点，考虑到多数人所使用的密码为常见的组合，攻击者可以将所有密码的常见组合进行单向哈希，得到一个摘要组合，然后与数据库中的摘要进行比对即可获得对应的密码。这个摘要组合也被称为rainbow table。</p>
+
+<p>　　更糟糕的是，一个攻击者只要建立上述的rainbow table，可以匹配所有的密码数据库。仍然等同于一家“暴库”，全部遭殃。以后要是有某家厂商宣布“我们的密码都是哈希后存储的，绝对安全”，大家对这个行为要特别警惕并表示不屑。有兴趣的朋友可以搜索下，看看哪家厂商躺着中枪了。
+　　</p>
+
+<h3>进阶方案：</h3>
+
+<p>　　将明文密码混入“随机因素”，然后进行单向哈希后存储，也就是所谓的“Salted Hash”。</p>
+
+<p>　　这个方式相比上面的方案，最大的好处是针对每一个数据库中的密码，都需要建立一个完整的rainbow table进行匹配。 因为两个同样使用“passwordhunter”作为密码的账户，在数据库中存储的摘要完全不同。</p>
+
+<p>　　10多年以前，因为计算和内存大小的限制，这个方案还是足够安全的，因为攻击者没有足够的资源建立这么多的rainbow table。 但是，在今日，因为显卡的恐怖的并行计算能力，这种攻击已经完全可行。
+　　</p>
+
+<h3>专家方案：</h3>
+
+<p>　　故意增加密码计算所需耗费的资源和时间，使得任何人都不可获得足够的资源建立所需的rainbow table。</p>
+
+<p>　　这类方案有一个特点，算法中都有个因子，用于指明计算密码摘要所需要的资源和时间，也就是计算强度。计算强度越大，攻击者建立rainbow table越困难，以至于不可继续。</p>
+
+<p>　　这类方案的常用算法有三种：</p>
+
+<p>　　1）PBKDF2(Password-Based Key Derivation Function)</p>
+
+<p>　　PBKDF2简单而言就是将salted hash进行多次重复计算，这个次数是可选择的。如果计算一次所需要的时间是1微秒，那么计算1百万次就需要1秒钟。假如攻击一个密码所需的rainbow table有1千万条，建立所对应的rainbow table所需要的时间就是115天。这个代价足以让大部分的攻击者忘而生畏。</p>
+
+<p>　　美国政府机构已经将这个方法标准化，并且用于一些政府和军方的系统。 这个方案最大的优点是标准化，实现容易同时采用了久经考验的SHA算法。</p>
+
+<p>　　2） bcrypt</p>
+
+<p>　　bcrypt是专门为密码存储而设计的算法，基于Blowfish加密算法变形而来，由Niels Provos和David Mazières发表于1999年的USENIX。</p>
+
+<p>　　bcrypt最大的好处是有一个参数（work factor)，可用于调整计算强度，而且work factor是包括在输出的摘要中的。随着攻击者计算能力的提高，使用者可以逐步增大work factor，而且不会影响已有用户的登陆。</p>
+
+<p>　　bcrypt经过了很多安全专家的仔细分析，使用在以安全著称的OpenBSD中，一般认为它比PBKDF2更能承受随着计算能力加强而带来的风险。bcrypt也有广泛的函数库支持，因此我们建议使用这种方式存储密码。</p>
+
+<p>　　3) scrypt</p>
+
+<p>　　scrypt是由著名的FreeBSD黑客 Colin Percival为他的备份服务 Tarsnap开发的。</p>
+
+<p>　　和上述两种方案不同，scrypt不仅计算所需时间长，而且占用的内存也多，使得并行计算多个摘要异常困难，因此利用rainbow table进行暴力攻击更加困难。scrypt没有在生产环境中大规模应用，并且缺乏仔细的审察和广泛的函数库支持。但是，scrypt在算法层面只要没有破绽，它的安全性应该高于PBKDF2和bcrypt。</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">vvlee</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2013-01-23T15:40:00+08:00'><span class='date'><span class='date-month'>Jan</span> <span class='date-day'>23</span><span class='date-suffix'>rd</span>, <span class='date-year'>2013</span></span> <span class='time'>3:40 pm</span></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/other/'>other</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://livv.github.io/blog/2013/01/23/store-password-security/" data-via="" data-counturl="http://livv.github.io/blog/2013/01/23/store-password-security/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/01/10/sips-on-osx/" title="Previous Post: 在 OS X 系统中使用 sips 命令批量处理图片">&laquo; 在 OS X 系统中使用 sips 命令批量处理图片</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2013/01/29/hockeykit-run-on-osx/" title="Next Post: HockeyKit run on OSX">HockeyKit run on OSX &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/07/17/iphone-lcd-clock-use-system-font/">Iphone Lcd Clock Use System Font</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/07/03/mac-os-terminal-skill/">Mac Os Terminal Skill</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/06/27/wget-tutorials/">Wget Tutorials</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/06/27/uploade2appstore-via-command-line/">上传appstore通过命令行</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/06/21/git-log-geek/">Git Log Geek</a>
+      </li>
+    
+  </ul>
+</section>
+  
+<section>  
+  <a target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=aR8fGgEIDQYeKR8AGUcYGEcKBgQ" style="text-decoration:none;"><img src="http://rescdn.qqmail.com/zh_CN/htmledition/images/function/qm_open/ico_mailme_01.png"/></a>
+</section>  
+  
+
+  
+<section>  
+  <h1>新浪微博</h1>  
+  <ul id="weibo">  
+    <li>  
+      <iframe   
+        width="100%"   
+        height="550"   
+        class="share_self"   
+        frameborder="0"   
+        scrolling="no"   
+        src="http://widget.weibo.com/weiboshow/index.php?width=0&height=550&ptype=1&speed=0&skin=&isTitle=0&noborder=1&isWeibo=1&isFans=&uid=2099590271&verifier=c77742aa">  
+      </iframe>  
+    </li>  
+  </ul>  
+</section>  
+  
+
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/livv">@livv</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'livv',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - vvlee -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'vvblog';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://livv.github.io/blog/2013/01/23/store-password-security/';
+        var disqus_url = 'http://livv.github.io/blog/2013/01/23/store-password-security/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Mac | 人生短短数十载]]></title>
+  <link href="http://livv.github.io/blog/categories/mac/atom.xml" rel="self"/>
+  <link href="http://livv.github.io/"/>
+  <updated>2014-12-13T14:42:35+08:00</updated>
+  <id>http://livv.github.io/</id>
+  <author>
+    <name><![CDATA[vvlee]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Mac Os Terminal Skill]]></title>
+    <link href="http://livv.github.io/blog/2013/07/03/mac-os-terminal-skill/"/>
+    <updated>2013-07-03T10:35:00+08:00</updated>
+    <id>http://livv.github.io/blog/2013/07/03/mac-os-terminal-skill</id>
+    <content type="html"><![CDATA[<h2>control+u</h2>
+
+<p>如果你在一条终端命令中发现有输入错误的话，那么用 control+u 快捷键可以直接删除这一整条命令，然后你就可以重新输入。</p>
+
+<h2>mkdir</h2>
+
+<p>很多人可能会很熟悉在 mkdir 是在「终端」中创建文件夹的工具，比如mkdir ./abc，即可在当前目录创建一个名为 abc 的文件夹。但如果想要建立更多层级的目录呢？就需要用 mkdir -p 命令来解决，比如：</p>
+
+<pre><code>mkdir -p ./abc/123/guomii/xxx
+</code></pre>
+
+<h2>!!</h2>
+
+<p>有时候，你写了一条长长的命令，按回车之后发现没有执行权限，需要在命令前添加 sudo，这时你可能要崩溃。不过其实可以用 <code>sudo !!</code> 这条命令来解决，它执行的效果和 sudo {上一条命令} 是一样的。</p>
+
+<p>另外，! 在「终端」中还有一个妙用——它可以用来执行你最后一次以特定字母开头的命令。比如你在一个「终端」会话中已经执行过ls,mkdir,find,chown 等多条命令。这时你可以用 !l 来执行 ls，用 !f 来执行 find…大家都看懂了吧？(very cool)</p>
+
+<h2>history</h2>
+
+<p>用 history 命令可以显示你最近执行过的命令历史记录，你还可以指定显示条数，比如 history 20即可显示最近的20条命令历史记录。此外，你还可以筛选包含特定字符的命令，比如用 <code>history | grep mk</code>，就可以只显示历史记录中包含 mk 的命令。</p>
+
+<h2>&amp;&amp;</h2>
+
+<p>&amp;&amp; 可以将两条命令合并成一条命令，其实我们在之前的文章中，已经多次应用过这种写法了，大家可以返回去看看。</p>
+
+<h2>reset</h2>
+
+<p>reset 的作用很简单——将目前「终端」屏幕上的内容清空，就好像刚刚打开终端一样。（不如新建一个标签，然后关掉之前的，感觉这样更快捷。）</p>
+
+<p>其实输入命令远没有快捷键方便，“control+l” 可以清屏，&#8221;command+k&#8221;可以全部清除。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Mac Terminal 彩色]]></title>
+    <link href="http://livv.github.io/blog/2013/06/13/mac-terminal-color/"/>
+    <updated>2013-06-13T13:49:00+08:00</updated>
+    <id>http://livv.github.io/blog/2013/06/13/mac-terminal-color</id>
+    <content type="html"><![CDATA[<h3>彩色化ls的输出</h3>
+
+<p>Mac中BSD的ls命令可以使用-G参数彩色化输出的文件列表，需要配置LSCOLORS环境变量定义颜色，具体配置方法可以输入man ls查看。</p>
+
+<p>不过，我推荐安装Linux使用的GNU Coreutils替换Mac的ls命令，因为：</p>
+
+<ul>
+<li>Coreutils提供了配置工具，定义颜色代码更加方便；</li>
+<li>Coreutils包含的不仅仅是ls，同时作为Linux用户，我更习惯于使用GNU的各种shell工具。</li>
+</ul>
+
+
+<hr />
+
+<ul>
+<li>通过Homebrew安装Coreutils</li>
+</ul>
+
+
+<pre><code>brew install xz coreutils
+</code></pre>
+
+<p>注：Coreutils并不依赖于xz，但它的源码是用xz格式压缩的，安装xz才能解压。</p>
+
+<ul>
+<li>生成颜色定义文件</li>
+</ul>
+
+
+<pre><code>gdircolors --print-database &gt; ~/.dir_colors
+</code></pre>
+
+<ul>
+<li>在<code>~/.bash_profile</code>配置文件中加入以下代码</li>
+</ul>
+
+
+<pre><code>if brew list | grep coreutils &gt; /dev/null ; then
+  PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+  alias ls='ls -F --show-control-chars --color=auto'
+  eval `gdircolors -b $HOME/.dir_colors`
+fi
+</code></pre>
+
+<p>gdircolor的作用就是设置ls命令使用的环境变量LS_COLORS（BSD是LSCOLORS），我们可以修改~/.dir_colors自定义文件的颜色，此文件中的注释已经包含各种颜色取值的说明。</p>
+
+<ul>
+<li>grep高亮显示关键字</li>
+</ul>
+
+
+<p>这个很简单，加上<code>--color</code>参数就可以了，为了使用方便，可以在<code>~/.bash_profile</code>配置文件中加上alias定义。</p>
+
+<pre><code>alias grep='grep --color'
+alias egrep='egrep --color'
+alias fgrep='fgrep --color'
+</code></pre>
+
+<ul>
+<li>Vim语法高亮</li>
+</ul>
+
+
+<p>在Vim中输入命令:syntax on激活语法高亮，若需要Vim启动时自动激活，在<code>~/.vimrc</code>中添加一行<code>syntax on</code>即可。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Homebrew Uninstall]]></title>
+    <link href="http://livv.github.io/blog/2013/06/13/homebrew-uninstall/"/>
+    <updated>2013-06-13T13:15:00+08:00</updated>
+    <id>http://livv.github.io/blog/2013/06/13/homebrew-uninstall</id>
+    <content type="html"><![CDATA[<pre><code>cd `brew –prefix`
+rm -rf Cellar
+brew prune
+rm -rf Library .git .gitignore bin/brew README.md share/man/man1/brew
+rm -rf ~/Library/Caches/Homebrew
+</code></pre>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Launchctl Manual]]></title>
+    <link href="http://livv.github.io/blog/2013/03/12/launchctl-manual/"/>
+    <updated>2013-03-12T13:54:00+08:00</updated>
+    <id>http://livv.github.io/blog/2013/03/12/launchctl-manual</id>
+    <content type="html"><![CDATA[<h3>相关目录</h3>
+
+<ul>
+<li>/System/Library/LaunchDaemons 操作系统，用户登录前生效，以 root 身份执行任务</li>
+<li>/System/Library/LaunchAgents 操作系统，用户登录后生效，以 root 身份执行任务</li>
+<li>/Library/LaunchDaemons 系统管理员，用户登录前生效，以 root 身份执行任务</li>
+<li>/Library/LaunchAgents 系统管理员，用户登录后生效，以 root 身份执行任务</li>
+<li>~/Library/LaunchAgents 当前用户，用户登录后生效，以当前登录用户身份执行任务
+使任务生效</li>
+</ul>
+
+
+<p>将 plist 文件按需要放置在上文的相关目录中</p>
+
+<h3>使任务生效</h3>
+
+<pre><code>launchctl load &lt;plist path&gt;
+</code></pre>
+
+<p>执行上述操作后任务会立即生效，且重启系统后也会自动生效。如果 plist 没有放在指定的目录，重启系统后不会再生效。</p>
+
+<p>如果 plist 存在 Key Disabled，且其值为 true，launchctl load 会提示 nothing found to load，系统启动时也不会自动生效人物，如果要手动强制启动，忽略 Disabled 为 true 带来的影响，传递 -wF 参数给 launchctl 即可。</p>
+
+<h3>使任务失效</h3>
+
+<pre><code>launchctl unload &lt;plist path&gt;
+</code></pre>
+
+<p>将相关 plist 文件从原有目录中移除
+执行上述操作后，任务会立即失效，plist 文件不会被移除，但是如果不将其从相关目录移走的话，重启系统后任务仍然会自动生效。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[HockeyKit Run on OSX]]></title>
+    <link href="http://livv.github.io/blog/2013/01/29/hockeykit-run-on-osx/"/>
+    <updated>2013-01-29T16:01:00+08:00</updated>
+    <id>http://livv.github.io/blog/2013/01/29/hockeykit-run-on-osx</id>
+    <content type="html"><![CDATA[<h3>引子</h3>
+
+<p>今天工作不是很忙，闲的无聊瞎逛。突然间发现了<a href="https://testflightapp.com/">TestFight</a>这个东东。很好用，但是弊端也很明显。每次打包ipa有20M+，上传服务器，进行OTA安装又要重新下载，太浪费时间了。不适合公司内部用。这个东东适合一些业余的团队在业余的时间做开发。及时性要求不高。google了之后发现还有个HockeyKit。</p>
+
+<h3>HockeyKit</h3>
+
+<p>公司现在用的是HockeyApp，这个项目之前是开源的，后来变收费了。所以我们就一直停留在老的版本，功能很有限。突然发现了新大陆HockeyKit，免费开源。支持android和ios。Nice ^_^  马上搭建起来。现在我的mac上做测试，成功后再搭建到公司服务器上。</p>
+
+<ol>
+<li>项目地址<a href="https://github.com/TheRealKerni/HockeyKit">https://github.com/TheRealKerni/HockeyKit</a>，克隆到本地，切换到master。目录有server，client，demo。只需要server就可以了。</li>
+<li>按照<a href="https://github.com/TheRealKerni/HockeyKit/wiki/Server">wiki</a>的介绍安装，首先需要一个支持php5的服务器。lion自带了apache，修改httpd.conf，让apache支持php。（lion 需要命令来启动apache <code>sudo apachectl start</code>）
+
+<ul>
+<li>确保你的服务器的httpd.conf 中 AllowOverride All ，以支持HockeyKit Server中子目录的配置重载</li>
+<li>确保服务的rewirte可用（lion默认开启 LoadModule rewrite_module libexec/apache2/mod_rewrite.so)</li>
+</ul>
+</li>
+<li>其他的按照文档进行就可以了。大功告成， ^_^  最后点击install application，如果出现alertview提示错误，重新回到步骤2检查一下是否设置了AllowOverride All。</li>
+</ol>
+
+
+<blockquote><p>本该淡淡然</p></blockquote>
+]]></content>
+  </entry>
+  
+</feed>

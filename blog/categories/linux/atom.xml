@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Linux | 人生短短数十载]]></title>
+  <link href="http://livv.github.io/blog/categories/linux/atom.xml" rel="self"/>
+  <link href="http://livv.github.io/"/>
+  <updated>2014-12-13T14:42:35+08:00</updated>
+  <id>http://livv.github.io/</id>
+  <author>
+    <name><![CDATA[vvlee]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Linux Crontab]]></title>
+    <link href="http://livv.github.io/blog/2012/03/01/linux-crontab/"/>
+    <updated>2012-03-01T10:15:00+08:00</updated>
+    <id>http://livv.github.io/blog/2012/03/01/linux-crontab</id>
+    <content type="html"><![CDATA[<p>每个系统有一个全局 crontab 文件, 位于 /etc/crontab.</p>
+
+<p>每个用户可以有自己独立的 crontab 文件, 位于 /var/spool/cron/crontabs , 但该文件并不设计为手动编辑的, 正确的方法是使用 crontab -e 来编辑自己的 crontab 文件.</p>
+
+<p>编辑自己用户的 <code>crontab</code> 文件</p>
+
+<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>    crontab -e
+</span></code></pre></td></tr></table></div></figure></p>
+
+<p>格式是:
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>    <span class="c"># m h dom mon dow command</span>
+</span><span class='line'>      * *  *   *   *  curl &lt;a <span class="nv">href</span><span class="o">=</span><span class="s2">&quot;http://yiriji.com/admin/cron&quot;</span>&gt;http://yiriji.com/admin/cron&lt;/a&gt;<span class="sb">`</span>
+</span></code></pre></td></tr></table></div></figure>
+* m, 分钟
+* h, 小时
+* dom, day of month, 日期
+* mon, month, 月份
+* dow, day of week, 星期</p>
+
+<p>和全局的 crontab 不同的是, 没有用户名这一列</p>
+
+<h3>Ubuntu中的全局crontab文件示范:</h3>
+
+<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>    <span class="c"># m h dom mon dow user  command&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'>&lt;pre&gt;&lt;code&gt;# 每天每个小时的第17分执行 /etc/cron.hourly 文件下的所有可执行程序或脚本
+</span><span class='line'><span class="m">17</span> *    * * *   root    <span class="nb">cd</span> / <span class="p">&amp;</span>amp<span class="p">;&amp;</span>amp<span class="p">;</span> run-parts --report /etc/cron.hourly
+</span><span class='line'>
+</span><span class='line'><span class="c"># 每天6点25分执行</span>
+</span><span class='line'><span class="m">25</span> <span class="m">6</span>    * * *   root    <span class="nb">test</span> -x /usr/sbin/anacron <span class="o">||</span> <span class="o">(</span> <span class="nb">cd</span> / <span class="p">&amp;</span>amp<span class="p">;&amp;</span>amp<span class="p">;</span> run-parts --report /etc/cron.daily <span class="o">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="c"># 每个星期天的6点47分执行</span>
+</span><span class='line'><span class="m">47</span> <span class="m">6</span>    * * <span class="m">7</span>   root    <span class="nb">test</span> -x /usr/sbin/anacron <span class="o">||</span> <span class="o">(</span> <span class="nb">cd</span> / <span class="p">&amp;</span>amp<span class="p">;&amp;</span>amp<span class="p">;</span> run-parts --report /etc/cron.weekly <span class="o">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="c"># 每月1号6点52分执行</span>
+</span><span class='line'><span class="m">52</span> <span class="m">6</span>    <span class="m">1</span> * *   root    <span class="nb">test</span> -x /usr/sbin/anacron <span class="o">||</span> <span class="o">(</span> <span class="nb">cd</span> / <span class="p">&amp;</span>amp<span class="p">;&amp;</span>amp<span class="p">;</span> run-parts --report /etc/cron.monthly <span class="o">)</span>
+</span><span class='line'>&lt;/code&gt;&lt;/pre&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;
+</span></code></pre></td></tr></table></div></figure>
+run-parts 的意思就是执行该文件夹下所有可执行程序或脚本.</p>
+
+<blockquote><p>本该淡淡然~~~</p></blockquote>
+]]></content>
+  </entry>
+  
+</feed>

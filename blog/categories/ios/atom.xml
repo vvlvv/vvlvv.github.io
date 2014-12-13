@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Ios | 人生短短数十载]]></title>
+  <link href="http://livv.github.io/blog/categories/ios/atom.xml" rel="self"/>
+  <link href="http://livv.github.io/"/>
+  <updated>2014-12-13T14:42:35+08:00</updated>
+  <id>http://livv.github.io/</id>
+  <author>
+    <name><![CDATA[vvlee]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Iphone Lcd Clock Use System Font]]></title>
+    <link href="http://livv.github.io/blog/2013/07/17/iphone-lcd-clock-use-system-font/"/>
+    <updated>2013-07-17T22:16:00+08:00</updated>
+    <id>http://livv.github.io/blog/2013/07/17/iphone-lcd-clock-use-system-font</id>
+    <content type="html"><![CDATA[<p>iPhone 默认的液晶时钟效果很是经典，如果您想在自己的应用里显示该时钟，可以用以下代码</p>
+
+<pre><code>[UIFont fontWithName:@"DBLCDTempBlack" size:58]
+</code></pre>
+
+<ul>
+<li>此外，类似 DBLCDTempBlack 的可用字体列表：</li>
+</ul>
+
+
+<pre><code>Family name: AppleGothic
+Font name: AppleGothic
+Family name: Hiragino Kaku Gothic ProN
+Font name: HiraKakuProN-W6
+Font name: HiraKakuProN-W3
+Family name: Arial Unicode MS
+Font name: ArialUnicodeMS
+Family name: Heiti K
+Font name: STHeitiK-Medium
+Font name: STHeitiK-Light
+Family name: DB LCD Temp
+Font name: DBLCDTempBlack
+Family name: Helvetica
+Font name: Helvetica-Oblique
+Font name: Helvetica-BoldOblique
+Font name: Helvetica
+Font name: Helvetica-Bold
+Family name: Marker Felt
+Font name: MarkerFelt-Thin
+Family name: Times New Roman
+Font name: TimesNewRomanPSMT
+Font name: TimesNewRomanPS-BoldMT
+Font name: TimesNewRomanPS-BoldItalicMT
+Font name: TimesNewRomanPS-ItalicMT
+Family name: Verdana
+Font name: Verdana-Bold
+Font name: Verdana-BoldItalic
+Font name: Verdana
+Font name: Verdana-Italic
+Family name: Georgia
+Font name: Georgia-Bold
+Font name: Georgia
+Font name: Georgia-BoldItalic
+Font name: Georgia-Italic
+Family name: Arial Rounded MT Bold
+Font name: ArialRoundedMTBold
+Family name: Trebuchet MS
+Font name: TrebuchetMS-Italic
+Font name: TrebuchetMS
+Font name: Trebuchet-BoldItalic
+Font name: TrebuchetMS-Bold
+Family name: Heiti TC
+Font name: STHeitiTC-Light
+Font name: STHeitiTC-Medium
+Family name: Geeza Pro
+Font name: GeezaPro-Bold
+Font name: GeezaPro
+Family name: Courier
+Font name: Courier
+Font name: Courier-BoldOblique
+Font name: Courier-Oblique
+Font name: Courier-Bold
+Family name: Arial
+Font name: ArialMT
+Font name: Arial-BoldMT
+Font name: Arial-BoldItalicMT
+Font name: Arial-ItalicMT
+Family name: Heiti J
+Font name: STHeitiJ-Medium
+Font name: STHeitiJ-Light
+Family name: Arial Hebrew
+Font name: ArialHebrew
+Font name: ArialHebrew-Bold
+Family name: Courier New
+Font name: CourierNewPS-BoldMT
+Font name: CourierNewPS-ItalicMT
+Font name: CourierNewPS-BoldItalicMT
+Font name: CourierNewPSMT
+Family name: Zapfino
+Font name: Zapfino
+Family name: American Typewriter
+Font name: AmericanTypewriter
+Font name: AmericanTypewriter-Bold
+Family name: Heiti SC
+Font name: STHeitiSC-Medium
+Font name: STHeitiSC-Light
+Family name: Helvetica Neue
+Font name: HelveticaNeue
+Font name: HelveticaNeue-Bold
+Family name: Thonburi
+Font name: Thonburi-Bold
+Font name: Thonburi
+</code></pre>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[上传appstore通过命令行]]></title>
+    <link href="http://livv.github.io/blog/2013/06/27/uploade2appstore-via-command-line/"/>
+    <updated>2013-06-27T13:41:00+08:00</updated>
+    <id>http://livv.github.io/blog/2013/06/27/uploade2appstore-via-command-line</id>
+    <content type="html"><![CDATA[<blockquote><p>未验证（先记录下来，后续研究）<a href="http://stackoverflow.com/questions/11888122/how-to-upload-an-ios-app-to-the-app-store-via-command-line">来源</a></p></blockquote>
+
+<ul>
+<li><p>Make sure you have an application in &ldquo;waiting to upload&rdquo; state.</p></li>
+<li><p>Create a new keychain Item Named: Xcode:itunesconnect.apple.com provide your credentials to itunes connect.</p></li>
+<li><p>From the command line:</p></li>
+</ul>
+
+
+<pre><code>xcrun -sdk iphoneos Validation -online -upload -verbose "path to ipa"
+</code></pre>
+
+<pre><code>This is perfect. I've lots of clients and customers. I want to upload apps on behalf of my clients/customers, how can I create respective key chain items and provide them during "xcrun" command? – Satyam svv Dec 1 '12 at 2:28
+
+you can create a ad-hoc key before running xcrun and discart it after the upload is finished security add-generic-password -s Xcode:itunesconnect.apple.com -a LOGIN -w PASSWORD -U xcrun -sdk iphoneos Validation -online -upload -verbose "path to ipa" security delete-generic-password -s Xcode:itunesconnect.apple.com -a LOGIN
+</code></pre>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[iOS设计元素备忘单]]></title>
+    <link href="http://livv.github.io/blog/2013/05/31/ios-design-memo-list/"/>
+    <updated>2013-05-31T09:02:00+08:00</updated>
+    <id>http://livv.github.io/blog/2013/05/31/ios-design-memo-list</id>
+    <content type="html"><![CDATA[<p><img src="/images/img/ios_1_resolutions.png">
+<img src="/images/img/ios_2_icons.png">
+<img src="/images/img/ios_3_commonly_used_design_elements.png">
+<img src="/images/img/ios_4_dislplays.png"></p>
+
+<blockquote><p>本该淡淡然~~~</p></blockquote>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[NSPredicate 的用法]]></title>
+    <link href="http://livv.github.io/blog/2013/05/08/nspredicate/"/>
+    <updated>2013-05-08T09:22:00+08:00</updated>
+    <id>http://livv.github.io/blog/2013/05/08/nspredicate</id>
+    <content type="html"><![CDATA[<p>一般来说这种情况还是蛮多的，比如你从文件中读入了一个array1，然后想把程序中的一个array2中符合array1中内容的元素过滤出来。
+正 常傻瓜一点就是两个for循环，一个一个进行比较，这样效率不高，而且代码也不好看。
+其实一个循环或者无需循环就可以搞定了，那就需要用搞 NSPredicate这个类了～膜拜此类～</p>
+
+<h5>例子一，一个循环</h5>
+
+<pre><code>NSArray *arrayFilter = [NSArray arrayWithObjects:@"pict", @"blackrain", @"ip", nil];
+NSArray *arrayContents = [NSArray arrayWithObjects:@"I am a picture.", @"I am a guy", @"I am gagaga", @"ipad", @"iphone", nil];
+</code></pre>
+
+<p>我想过滤arrayContents的话只要循环 arrayFilter就好了</p>
+
+<pre><code>int i = 0, count = [arrayFilter count];
+for(i = 0; i &lt; count; i ++)
+{
+NSString *arrayItem = (NSString *)[arrayFilter objectAtIndex:i];
+NSPredicate *filterPredicate = [[NSPredicate predicateWithFormat:@"SELF CONTAINS %@", arrayItem];
+NSLog(@"Filtered array with filter %@, %@", arrayItem, [arrayContents filteredArrayUsingPredicate:filterPredicate]);
+}
+</code></pre>
+
+<p>当然以上代码中arrayContent最好用mutable 的，这样就可以直接filter了，NSArray是不可修改的。</p>
+
+<h5>例子二，无需循环</h5>
+
+<pre><code>NSArray *arrayFilter = [NSArray arrayWithObjects:@"abc1", @"abc2", nil];
+NSArray *arrayContent = [NSArray arrayWithObjects:@"a1", @"abc1", @"abc4", @"abc2", nil];
+NSPredicate *thePredicate = [NSPredicate predicateWithFormat:@"NOT (SELF in %@)", arrayFilter];
+[arrayContent filterUsingPredicate:thePredicate];
+</code></pre>
+
+<p>这样arrayContent过滤出来的就是不包含 arrayFilter中的所有item了。</p>
+
+<h5>生成文件路径下文件集合列表</h5>
+
+<pre><code>NSFileManager *fileManager = [NSFileManager defaultManager];
+NSString *defaultPath = [[NSBundle mainBundle] resourcePath];
+NSError *error;
+NSArray *directoryContents = [fileManager contentsOfDirectoryAtPath:defaultPath error:&amp;error]
+</code></pre>
+
+<p><code>match的用法</code></p>
+
+<ul>
+<li>简单比较</li>
+</ul>
+
+
+<pre><code>NSString *match = @"imagexyz-999.png";
+NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF == %@", match];
+NSArray *results = [directoryContents filteredArrayUsingPredicate:predicate];﻿
+</code></pre>
+
+<ul>
+<li>match里like的用法（类似Sql中的用法）</li>
+</ul>
+
+
+<pre><code>NSString *match = @"imagexyz*.png";
+NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF like %@", match];
+NSArray *results = [directoryContents filteredArrayUsingPredicate:predicate];﻿
+</code></pre>
+
+<ul>
+<li>大小写比较</li>
+</ul>
+
+
+<p>［c］表示忽略大小写，［d］表示忽略重音，可以在一起使用，如下：</p>
+
+<pre><code>NSString *match = @"imagexyz*.png";
+NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF like[cd] %@", match];
+NSArray *results = [directoryContents filteredArrayUsingPredicate:predicate];﻿
+</code></pre>
+
+<ul>
+<li>使用正则</li>
+</ul>
+
+
+<pre><code>NSString *match = @"imagexyz-\\d{3}\\.png";  //imagexyz－123.png
+NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF matches %@", match];
+NSArray *results = [directoryContents filteredArrayUsingPredicate:predicate];﻿
+</code></pre>
+
+<h5>总结：</h5>
+
+<ol>
+<li>当使用聚合类的操作符时是可以不需要循环的</li>
+<li>当使用单个比较类的操作符时可以一个循环来搞定</li>
+</ol>
+
+
+<p>PS，例子 一中尝试使用[@&ldquo;SELF CONTAINS %@&rdquo;, arrayFilter] 来过滤会挂调，因为CONTAINS时字符串比较操作符，不是集合操作符。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[25个增强iOS应用程序性能的提示和技巧]]></title>
+    <link href="http://livv.github.io/blog/2013/04/12/25-ios-skill/"/>
+    <updated>2013-04-12T11:38:00+08:00</updated>
+    <id>http://livv.github.io/blog/2013/04/12/25-ios-skill</id>
+    <content type="html"><![CDATA[<p><a href="http://beyondvincent.com">来源</a></p>
+
+<ol>
+<li>使用ARC进行内存管理</li>
+<li>在适当的情况下使用reuseIdentifier</li>
+<li>尽可能将View设置为不透明（Opaque）</li>
+<li>避免臃肿的XIBs</li>
+<li>不要阻塞主线程</li>
+<li>让图片的大小跟UIImageView一样</li>
+<li>选择正确的集合</li>
+<li>使用GZIP压缩</li>
+<li>重用和延迟加载View</li>
+<li>缓存、缓存、缓存</li>
+<li>考虑绘制</li>
+<li>处理内存警告</li>
+<li>重用花销很大的对象</li>
+<li>使用Sprite Sheets</li>
+<li>避免重新处理数据</li>
+<li>选择正确的数据格式</li>
+<li>设置适当的背景图片</li>
+<li>降低Web内容的影响</li>
+<li>设置阴影路径</li>
+<li>优化TableView</li>
+<li>选择正确的数据存储方式</li>
+<li>加速启动时间</li>
+<li>使用Autorelease Pool</li>
+<li>缓存图片 — 或者不缓存</li>
+<li>尽量避免Date格式化</li>
+</ol>
+
+]]></content>
+  </entry>
+  
+</feed>
