@@ -16,11 +16,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://livv.github.io/blog/2013/06/27/uploade2appstore-via-command-line/</loc>
-    <lastmod>2013-06-27T13:41:00+08:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>http://livv.github.io/blog/2013/06/21/git-log-geek/</loc>
     <lastmod>2013-06-21T14:21:00+08:00</lastmod>
     <priority>0.8</priority>
@@ -33,16 +28,6 @@
   <url>
     <loc>http://livv.github.io/blog/2013/06/13/homebrew-uninstall/</loc>
     <lastmod>2013-06-13T13:15:00+08:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>http://livv.github.io/blog/2013/06/11/goagent-bitbucket/</loc>
-    <lastmod>2013-06-11T22:39:00+08:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>http://livv.github.io/blog/2013/05/31/ios-design-memo-list/</loc>
-    <lastmod>2013-05-31T09:02:00+08:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -66,16 +51,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://livv.github.io/blog/2013/02/16/xcode-common-complie-option/</loc>
-    <lastmod>2013-02-16T11:39:00+08:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>http://livv.github.io/blog/2013/01/29/hockeykit-run-on-osx/</loc>
-    <lastmod>2013-01-29T16:01:00+08:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>http://livv.github.io/blog/2013/01/23/store-password-security/</loc>
     <lastmod>2013-01-23T15:40:00+08:00</lastmod>
     <priority>0.8</priority>
@@ -86,18 +61,8 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://livv.github.io/blog/2013/01/08/mac-android-eclipse/</loc>
-    <lastmod>2013-01-08T23:52:00+08:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>http://livv.github.io/blog/2013/01/05/mac-linux-date/</loc>
     <lastmod>2013-01-05T11:39:00+08:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>http://livv.github.io/blog/2013/01/03/2013-plan/</loc>
-    <lastmod>2013-01-03T23:56:00+08:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -113,11 +78,6 @@
   <url>
     <loc>http://livv.github.io/blog/2012/08/16/iphone-system-common-dir/</loc>
     <lastmod>2012-08-16T21:09:00+08:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>http://livv.github.io/blog/2012/05/02/lion-adjust-sound-volum/</loc>
-    <lastmod>2012-05-02T13:36:00+08:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -151,28 +111,8 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://livv.github.io/blog/2012/03/09/qq-weibo-need-true-ip/</loc>
-    <lastmod>2012-03-09T13:21:00+08:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>http://livv.github.io/blog/2012/03/07/mac-google-plus/</loc>
-    <lastmod>2012-03-07T14:04:00+08:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>http://livv.github.io/blog/2012/03/01/linux-crontab/</loc>
     <lastmod>2012-03-01T10:15:00+08:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>http://livv.github.io/blog/2012/02/17/toggle-hidden-files/</loc>
-    <lastmod>2012-02-17T16:23:00+08:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>http://livv.github.io/blog/2012/02/16/homebrew/</loc>
-    <lastmod>2012-02-16T13:33:00+08:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -182,13 +122,13 @@
   </url>
   <url>
     <loc>http://livv.github.io/blog/archives/</loc>
-    <lastmod>2014-12-15T12:05:17+08:00</lastmod>
+    <lastmod>2014-12-16T10:18:16+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://livv.github.io/</loc>
-    <lastmod>2014-12-15T12:05:17+08:00</lastmod>
+    <lastmod>2014-12-16T10:18:16+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>

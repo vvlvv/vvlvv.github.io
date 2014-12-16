@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Mac | 人生短短数十载]]></title>
   <link href="http://livv.github.io/blog/categories/mac/atom.xml" rel="self"/>
   <link href="http://livv.github.io/"/>
-  <updated>2014-12-15T12:05:17+08:00</updated>
+  <updated>2014-12-16T10:18:16+08:00</updated>
   <id>http://livv.github.io/</id>
   <author>
     <name><![CDATA[vvlee]]></name>
@@ -176,32 +176,40 @@ rm -rf ~/Library/Caches/Homebrew
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[HockeyKit Run on OSX]]></title>
-    <link href="http://livv.github.io/blog/2013/01/29/hockeykit-run-on-osx/"/>
-    <updated>2013-01-29T16:01:00+08:00</updated>
-    <id>http://livv.github.io/blog/2013/01/29/hockeykit-run-on-osx</id>
-    <content type="html"><![CDATA[<h3>引子</h3>
+    <title type="html"><![CDATA[在 OS X 系统中使用 Sips 命令批量处理图片]]></title>
+    <link href="http://livv.github.io/blog/2013/01/10/sips-on-osx/"/>
+    <updated>2013-01-10T12:54:00+08:00</updated>
+    <id>http://livv.github.io/blog/2013/01/10/sips-on-osx</id>
+    <content type="html"><![CDATA[<p>苹果系统自带的图片处理命令<strong><em>sips</em></strong>。</p>
 
-<p>今天工作不是很忙，闲的无聊瞎逛。突然间发现了<a href="https://testflightapp.com/">TestFight</a>这个东东。很好用，但是弊端也很明显。每次打包ipa有20M+，上传服务器，进行OTA安装又要重新下载，太浪费时间了。不适合公司内部用。这个东东适合一些业余的团队在业余的时间做开发。及时性要求不高。google了之后发现还有个HockeyKit。</p>
+<p>比如，你想要将某文件夹的 n 张大尺寸JPG图片都缩小成宽度为600px的图片，高度自动按比例缩放。那么命令则为(假设文件夹的路径为 ~/Desktop/Test)：</p>
 
-<h3>HockeyKit</h3>
+<pre><code>sips -Z 600 ~/Desktop/Test/*.JPG
+</code></pre>
 
-<p>公司现在用的是HockeyApp，这个项目之前是开源的，后来变收费了。所以我们就一直停留在老的版本，功能很有限。突然发现了新大陆HockeyKit，免费开源。支持android和ios。Nice ^_^  马上搭建起来。现在我的mac上做测试，成功后再搭建到公司服务器上。</p>
+<p>执行完成之后，你桌面上Test文件夹中的所有JPG图片都缩小城宽度为600px的小尺寸版本了。另外，sips 还有很多功能有待你挖掘，比如你还可以指定高度和宽度(注意z需要小写)：</p>
 
-<ol>
-<li>项目地址<a href="https://github.com/TheRealKerni/HockeyKit">https://github.com/TheRealKerni/HockeyKit</a>，克隆到本地，切换到master。目录有server，client，demo。只需要server就可以了。</li>
-<li>按照<a href="https://github.com/TheRealKerni/HockeyKit/wiki/Server">wiki</a>的介绍安装，首先需要一个支持php5的服务器。lion自带了apache，修改httpd.conf，让apache支持php。（lion 需要命令来启动apache <code>sudo apachectl start</code>）
+<pre><code>sips -z 300 600 ~/Desktop/Test/*.JPG
+</code></pre>
 
-<ul>
-<li>确保你的服务器的httpd.conf 中 AllowOverride All ，以支持HockeyKit Server中子目录的配置重载</li>
-<li>确保服务的rewirte可用（lion默认开启 LoadModule rewrite_module libexec/apache2/mod_rewrite.so)</li>
-</ul>
-</li>
-<li>其他的按照文档进行就可以了。大功告成， ^_^  最后点击install application，如果出现alertview提示错误，重新回到步骤2检查一下是否设置了AllowOverride All。</li>
-</ol>
+<p>你还可以用 sips 命令批量旋转图片，默认旋转方式为顺时针，下面是将图片顺时针旋转90度的方法：</p>
 
+<pre><code>sips -r 90 ~/Desktop/Test/*.JPG
+</code></pre>
 
-<blockquote><p>本该淡淡然</p></blockquote>
+<p>其实，你甚至可以以不规则的角度旋转，比如旋转120度，大家自己试试是什么效果吧。</p>
+
+<p>还可以用来翻转图片，不管是水平翻转还是垂直翻转都可以。水平翻转命令为：</p>
+
+<pre><code>sips -f horizontal ~/Desktop/Test/*.JPG
+</code></pre>
+
+<p>垂直翻转命令为：</p>
+
+<pre><code>sips -f vertical ~/Desktop/Test/*.JPG
+</code></pre>
+
+<blockquote><p>本该淡淡然~~~</p></blockquote>
 ]]></content>
   </entry>
   

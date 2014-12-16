@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Ios | 人生短短数十载]]></title>
   <link href="http://livv.github.io/blog/categories/ios/atom.xml" rel="self"/>
   <link href="http://livv.github.io/"/>
-  <updated>2014-12-15T12:05:17+08:00</updated>
+  <updated>2014-12-16T10:18:16+08:00</updated>
   <id>http://livv.github.io/</id>
   <author>
     <name><![CDATA[vvlee]]></name>
@@ -111,44 +111,6 @@ Family name: Thonburi
 Font name: Thonburi-Bold
 Font name: Thonburi
 </code></pre>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[上传appstore通过命令行]]></title>
-    <link href="http://livv.github.io/blog/2013/06/27/uploade2appstore-via-command-line/"/>
-    <updated>2013-06-27T13:41:00+08:00</updated>
-    <id>http://livv.github.io/blog/2013/06/27/uploade2appstore-via-command-line</id>
-    <content type="html"><![CDATA[<blockquote><p>未验证（先记录下来，后续研究）<a href="http://stackoverflow.com/questions/11888122/how-to-upload-an-ios-app-to-the-app-store-via-command-line">来源</a></p></blockquote>
-
-<ul>
-<li><p>Make sure you have an application in &ldquo;waiting to upload&rdquo; state.</p></li>
-<li><p>Create a new keychain Item Named: Xcode:itunesconnect.apple.com provide your credentials to itunes connect.</p></li>
-<li><p>From the command line:</p></li>
-</ul>
-
-
-<pre><code>xcrun -sdk iphoneos Validation -online -upload -verbose "path to ipa"
-</code></pre>
-
-<pre><code>This is perfect. I've lots of clients and customers. I want to upload apps on behalf of my clients/customers, how can I create respective key chain items and provide them during "xcrun" command? – Satyam svv Dec 1 '12 at 2:28
-
-you can create a ad-hoc key before running xcrun and discart it after the upload is finished security add-generic-password -s Xcode:itunesconnect.apple.com -a LOGIN -w PASSWORD -U xcrun -sdk iphoneos Validation -online -upload -verbose "path to ipa" security delete-generic-password -s Xcode:itunesconnect.apple.com -a LOGIN
-</code></pre>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[iOS设计元素备忘单]]></title>
-    <link href="http://livv.github.io/blog/2013/05/31/ios-design-memo-list/"/>
-    <updated>2013-05-31T09:02:00+08:00</updated>
-    <id>http://livv.github.io/blog/2013/05/31/ios-design-memo-list</id>
-    <content type="html"><![CDATA[<p><img src="/images/img/ios_1_resolutions.png">
-<img src="/images/img/ios_2_icons.png">
-<img src="/images/img/ios_3_commonly_used_design_elements.png">
-<img src="/images/img/ios_4_dislplays.png"></p>
-
-<blockquote><p>本该淡淡然~~~</p></blockquote>
 ]]></content>
   </entry>
   
@@ -289,6 +251,125 @@ NSArray *results = [directoryContents filteredArrayUsingPredicate:predicate];﻿
 <li>尽量避免Date格式化</li>
 </ol>
 
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[info.plist常用key介绍]]></title>
+    <link href="http://livv.github.io/blog/2012/08/24/info-plist-common-key/"/>
+    <updated>2012-08-24T16:41:00+08:00</updated>
+    <id>http://livv.github.io/blog/2012/08/24/info-plist-common-key</id>
+    <content type="html"><![CDATA[<ul>
+<li>UIRequiresPersistentWiFi 在程序中弹出wifi选择的key（系统设置中需要将wifi提示打开）</li>
+<li>UIAppFonts 内嵌字体<a href="http://www.minroad.com/?p=412">详细介绍</a></li>
+<li>UIApplicationExitsOnSuspend 程序是否在后台运行，自己在进入后台的时候exit(0)是很傻的办法</li>
+<li>UIBackgroundModes 后台运行时的服务，具体看iOS4的后台介绍</li>
+<li>UIDeviceFamily array类型（1为iPhone和iPod touch设备，2为iPad)</li>
+<li>UIFileSharingEnabled 开启itunes共享document文件夹</li>
+<li>UILaunchImageFile 相当于Default.png（更名而已）</li>
+<li>UIPrerenderedIcon icon上是否有高光</li>
+<li>UIRequiredDeviceCapabilities 设备需要的功能<a href="http://developer.apple.com/library/mac/#documentation/General/Reference/InfoPlistKeyReference/Articles/iPhoneOSKeys.html%23//apple_ref/doc/uid/TP40009252-SW3">具体点击这里查看</a></li>
+<li>UIStatusBarHidden 状态栏隐藏（和程序内的区别是在于显示Default.png已经生效）</li>
+<li>UIStatusBarStyle 状态栏类型</li>
+<li>UIViewEdgeAntialiasing 是否开启抗锯齿</li>
+<li>CFBundleDisplayName app显示名</li>
+<li>CFBundleIconFile、CFBundleIconFiles 图标</li>
+<li>CFBundleName 与CFBundleDisplayName的区别在于这个是短名，16字符之内</li>
+<li>CFBundleVersion 版本</li>
+<li>CFBundleURLTypes 自定义url，用于利用url弹回程序</li>
+<li>CFBundleLocalizations 本地资源的本地化语言，用于itunes页面左下角显示本地话语种</li>
+<li>CFBundleDevelopmentRegion 也是本地化相关，如果用户所在地没有相应的语言资源，则用这个key的value来作为默认</li>
+</ul>
+
+
+<blockquote><p>本该淡淡然~~~</p></blockquote>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[iPhone 系统常用目录路径位置]]></title>
+    <link href="http://livv.github.io/blog/2012/08/16/iphone-system-common-dir/"/>
+    <updated>2012-08-16T21:09:00+08:00</updated>
+    <id>http://livv.github.io/blog/2012/08/16/iphone-system-common-dir</id>
+    <content type="html"><![CDATA[<ol>
+<li>【/Applications】
+常用软件的安装目录</li>
+<li>【/private /var/ mobile/Media /iphone video Recorder】
+录像文件存放目录</li>
+<li>【/private /var/ mobile/Media /DCIM】
+相机拍摄的照片文件存放目录</li>
+<li>【/private/var/ mobile /Media/iTunes_Control/Music】
+iTunes上传的多媒体文件（例如MP3、MP4等）存放目录，文件没有被修改，但是文件名字被修改了，直接下载到电脑即可读取。</li>
+<li>【/private /var/root/Media/EBooks】
+电子书存放目录</li>
+<li>【/Library/Ringtones】
+系统自带的来电铃声存放目录（用iTunes将文件转换为ACC文件，把后缀名改成.m4r,用iPhone_PC_Suite传到/Library/Ringtones即可）</li>
+<li>【/private/var/ mobile /Library/AddressBook】
+系统电话本的存放目录。</li>
+<li>【/private /var/ mobile/Media /iphone Recorder】
+录音文件存放目录</li>
+<li>【/Applications/Preferences.app/zh_CN.lproj】
+软件Preferences.app的中文汉化文件存放目录</li>
+<li>【/Library/Wallpaper】
+系统墙纸的存放目录</li>
+<li>【/System/Library/Audio/UISounds】
+系统声音文件的存放目录</li>
+<li>【/private/var/root/Media/PXL】
+ibrickr上传安装程序建立的一个数据库，估计和windows的uninstall记录差不多。</li>
+<li>【/bin】
+和linux系统差不多，是系统执行指令的存放目录。</li>
+<li>【/private/var/ mobile /Library/SMS】
+系统短信的存放目录</li>
+<li>【/private/var/run】
+系统进程运行的临时目录？（查看这里可以看到系统启动的所有进程）</li>
+<li>【/private/var/logs/CrashReporter】
+系统错误记录报告</li>
+<li>【/System/Library/Fonts/Cache】锁屏时钟字体体 ，记得备份原始的字体，然后将 &ldquo;LockClock.ttf&rdquo; 复制进去，然后重启或者respring iphone</li>
+</ol>
+
+
+<hr />
+
+<p>分割线（补充说明）</p>
+
+<hr />
+
+<ol>
+<li>/private/var/mobile 　新刷完的机器，要在这个文件夹下建一个Documents的目录。</li>
+<li>/private/var/mobile/Applications 　通过AppStore和iTunes安装的程序都在里面。</li>
+<li>/private/var/stash 　这个文件夹下的Applications目录里面是所有通过Cydia和app安装的程序，Ringtones目录里是所有的手机铃音，自制铃音直接拷在里面即可，Themes目录里是所有Winterboard主题，可以手工修改。</li>
+<li>/var/mobile/Media/ROMs/GBA 　gpsPhone模拟器存放rom的目录。</li>
+<li>/var/mobile/Media/textReader 　textReader看书软件读取的电子书的存放路径。</li>
+<li>/System/Library/Fonts/Cache（系统字体目录，要替换的字体放在该目录下，权限644不变）</li>
+<li>/private/var/mobile/Media/Maps（离线地图目录，把地图文件夹放到该目录下，文件夹赋予777权限）</li>
+<li>/private/var/mobile/Library/Downloads （ipa文件存放目录，用Installous安装）</li>
+<li>/private/var/mobile/Library/Keyboard （系统拼音字库文件位置）</li>
+<li>/var/stash/Themes.XXXXXX （winterboard主题文件存放路径）</li>
+<li>/private/var/mobile/Media/DCIM/999APPLE （系统自带截屏文件存放路径）</li>
+</ol>
+
+
+<hr />
+
+<p>来给个备份时候常用的路径（摘抄通杀版~）</p>
+
+<ul>
+<li>/private/var/mobile/Library/AddressBook → 联系人</li>
+<li>/private/var/mobile/Library/CallHistory → 通话记录</li>
+<li>/private/var/mobile/Library/SMS → 短信</li>
+<li>/private/var/mobile/Library/Notes → 备忘录</li>
+<li>/private/var/mobile/Library/Safari → Safari 浏览器保存的书签等</li>
+<li>/private/var/mobile/Library/Mail → 电子邮件</li>
+<li>/private/var/mobile/Library/MCallShow →信安易来电秀注册文件</li>
+<li>/private/var/mobile/Media/DCIM →照片里面的胶卷</li>
+<li>/private/var/mobile/Media/Photos →照片里面的图片</li>
+<li>/private/var/mobile/Media/Videos →Cycorder摄像机软件拍摄文件保存路径（可以用WINSCP把MP4文件传到这里用它来看哟^_^）</li>
+<li>/private/var/mobile/Library/Preferences com.apple.mobilephone.speeddial.plist →个人收藏（快速拨号）</li>
+<li>/private/var/mobile/Media/Recordings →语音备忘录</li>
+</ul>
+
+
+<blockquote><p>本该淡淡然~~~</p></blockquote>
 ]]></content>
   </entry>
   

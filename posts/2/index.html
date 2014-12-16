@@ -9,17 +9,7 @@
   <meta name="author" content="vvlee">
 
   
-  <meta name="description" content="来源 使用ARC进行内存管理
-在适当的情况下使用reuseIdentifier
-尽可能将View设置为不透明（Opaque）
-避免臃肿的XIBs
-不要阻塞主线程
-让图片的大小跟UIImageView一样
-选择正确的集合
-使用GZIP压缩
-重用和延迟加载View
-缓存、缓存、缓存
-考虑绘制 &hellip;">
+  <meta name="description" content="来源月光博客 自己留个备份 ^_^ 菜鸟方案： 　　直接存储用户密码的明文或者将密码加密存储。 　　曾经有一次我在某知名网站重置密码，结果邮件中居然直接包含以前设置过的密码。我和客服咨询为什么直接将密码发送给用户，客服答曰：“减少用户步骤，用户体验更好”；再问“管理员是否可以直接获知我的密码”， &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -75,565 +65,6 @@
     <div id="content">
       <div class="blog-index">
   
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/04/12/25-ios-skill/">25个增强iOS应用程序性能的提示和技巧</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2013-04-12T11:38:00+08:00'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>12</span><span class='date-suffix'>th</span>, <span class='date-year'>2013</span></span> <span class='time'>11:38 am</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="http://beyondvincent.com">来源</a></p>
-
-<ol>
-<li>使用ARC进行内存管理</li>
-<li>在适当的情况下使用reuseIdentifier</li>
-<li>尽可能将View设置为不透明（Opaque）</li>
-<li>避免臃肿的XIBs</li>
-<li>不要阻塞主线程</li>
-<li>让图片的大小跟UIImageView一样</li>
-<li>选择正确的集合</li>
-<li>使用GZIP压缩</li>
-<li>重用和延迟加载View</li>
-<li>缓存、缓存、缓存</li>
-<li>考虑绘制</li>
-<li>处理内存警告</li>
-<li>重用花销很大的对象</li>
-<li>使用Sprite Sheets</li>
-<li>避免重新处理数据</li>
-<li>选择正确的数据格式</li>
-<li>设置适当的背景图片</li>
-<li>降低Web内容的影响</li>
-<li>设置阴影路径</li>
-<li>优化TableView</li>
-<li>选择正确的数据存储方式</li>
-<li>加速启动时间</li>
-<li>使用Autorelease Pool</li>
-<li>缓存图片 — 或者不缓存</li>
-<li>尽量避免Date格式化</li>
-</ol>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/03/15/shell-manual/">Shell_manual</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2013-03-15T12:34:00+08:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>15</span><span class='date-suffix'>th</span>, <span class='date-year'>2013</span></span> <span class='time'>12:34 pm</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h3>一些强大的命令</h3>
-
-<ul>
-<li><code>!$</code></li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>!$是一个特殊的环境变量，它代表了上一个命令的最后一个字符串。如：你可能会这样：
-</span><span class='line'>$mkdir mydir
-</span><span class='line'>$mv mydir yourdir
-</span><span class='line'>$cd yourdir
-</span><span class='line'>可以改成：
-</span><span class='line'>$mkdir mydir
-</span><span class='line'>$mv !$ yourdir
-</span><span class='line'>$cd !$</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li><code>sudo !!</code></li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>以root的身份执行上一条命令 。
-</span><span class='line'>场景举例：比如Ubuntu里用apt-get安装软件包的时候是需要root身份的，我们经常会忘记在apt-get前加sudo。每次不得不加上sudo再重新键入这行命令，这时可以很方便的用sudo !!完事。
-</span><span class='line'>（陈皓注：在shell下，有时候你会输入很长的命令，你可以使用!xxx来重复最近的一次命令，比如，你以前输入过，vi /where/the/file/is, 下次你可以使用 !vi 重得上次最近一次的vi命令。）</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li><code>cd –</code></li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>回到上一次的目录 。
-</span><span class='line'>场景举例：当前目录为/home/a，用cd ../b切换到/home/b。这时可以通过反复执行cd –命令在/home/a和/home/b之间来回方便的切换。</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li><code>‘ALT+.’ or ‘&lt;ESC&gt; .’</code></li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>热建alt+. 或 esc+. 可以把上次命令行的参数给重复出来。</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li><code>^old^new</code></li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>替换前一条命令里的部分字符串。
-</span><span class='line'>场景：echo "wanderful"，其实是想输出echo "wonderful"。只需要^a^o就行了，对很长的命令的错误拼写有很大的帮助。（陈皓注：也可以使用 !!:gs/old/new）</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li><code>du -s * | sort -n | tail</code></li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>列出当前目录里最大的10个文件。</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li><code>:w !sudo tee %</code></li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>在vi中保存一个只有root可以写的文件</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li><code>&gt; file.txt</code></li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>创建一个空文件，比touch短。</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li><p>在命令行前加空格，该命令不会进入history里。</p></li>
-<li><p><code>echo “ls -l” | at midnight</code></p></li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>在某个时间运行某个命令。</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li><code>ps aux | sort -nk +4 | tail</code></li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>列出头十个最耗内存的进程</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li><code>man ascii</code></li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>显示ascii码表。
-</span><span class='line'>场景：忘记ascii码表的时候还需要google么?尤其在天朝网络如此“顺畅”的情况下，就更麻烦在GWF多应用一次规则了，直接用本地的man ascii吧。</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li><code>ssh user@server bash &lt; /path/to/local/script.sh</code></li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>在远程机器上运行一段脚本。这条命令最大的好处就是不用把脚本拷到远程机器上。</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li><code>python -m SimpleHTTPServer</code></li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>一句话实现一个HTTP服务，把当前目录设为HTTP服务目录，可以通过http://localhost:8000访问 这也许是这个星球上最简单的HTTP服务器的实现了。</span></code></pre></td></tr></table></div></figure>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/03/12/launchctl-manual/">Launchctl Manual</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2013-03-12T13:54:00+08:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>12</span><span class='date-suffix'>th</span>, <span class='date-year'>2013</span></span> <span class='time'>1:54 pm</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h3>相关目录</h3>
-
-<ul>
-<li>/System/Library/LaunchDaemons 操作系统，用户登录前生效，以 root 身份执行任务</li>
-<li>/System/Library/LaunchAgents 操作系统，用户登录后生效，以 root 身份执行任务</li>
-<li>/Library/LaunchDaemons 系统管理员，用户登录前生效，以 root 身份执行任务</li>
-<li>/Library/LaunchAgents 系统管理员，用户登录后生效，以 root 身份执行任务</li>
-<li>~/Library/LaunchAgents 当前用户，用户登录后生效，以当前登录用户身份执行任务
-使任务生效</li>
-</ul>
-
-
-<p>将 plist 文件按需要放置在上文的相关目录中</p>
-
-<h3>使任务生效</h3>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>launchctl load &lt;plist path&gt;</span></code></pre></td></tr></table></div></figure>
-
-
-<p>执行上述操作后任务会立即生效，且重启系统后也会自动生效。如果 plist 没有放在指定的目录，重启系统后不会再生效。</p>
-
-<p>如果 plist 存在 Key Disabled，且其值为 true，launchctl load 会提示 nothing found to load，系统启动时也不会自动生效人物，如果要手动强制启动，忽略 Disabled 为 true 带来的影响，传递 -wF 参数给 launchctl 即可。</p>
-
-<h3>使任务失效</h3>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>launchctl unload &lt;plist path&gt;</span></code></pre></td></tr></table></div></figure>
-
-
-<p>将相关 plist 文件从原有目录中移除
-执行上述操作后，任务会立即失效，plist 文件不会被移除，但是如果不将其从相关目录移走的话，重启系统后任务仍然会自动生效。</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/02/16/xcode-common-complie-option/">Xcode 常用编译选项设置</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2013-02-16T11:39:00+08:00'><span class='date'><span class='date-month'>Feb</span> <span class='date-day'>16</span><span class='date-suffix'>th</span>, <span class='date-year'>2013</span></span> <span class='time'>11:39 am</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>用标准库连接</p>
-
-<p>LINK_WITH_STANDARD_LIBRARIES = YES</p>
-
-<p>如果激活此设置，那么编译器在链接过程中会自动使用通过标准库的链接器。</p>
-
-<p>Info.plist 输出编码</p>
-
-<p>INFOPLIST_OUTPUT_FORMAT = binary</p>
-
-<p>指定Info.plist文件的输出编码（默认情况下，输出与输入的编码保持不变），这个输出编码能指定“binary”或者“XML”。</p>
-
-<p>生成调试符号</p>
-
-<p>GCC_GENERATE_DEBUGGING_SYMBOLS = NO</p>
-
-<p>当启用的时候，详情等级能够通过build的&#8217;Level of Debug Symbols&#8217;设置去控制。</p>
-
-<p>隐藏内联方法</p>
-
-<p>GCC_INLINES_ARE_PRIVATE_EXTERN = YES</p>
-
-<p>Objective－C GC</p>
-
-<p>GCC_ENABLE_OBJC_GC = Unsupported</p>
-
-<p>优化级别</p>
-
-<p>GCC_OPTIMIZATION_LEVEL = Fastest, Smallest   [-OS]</p>
-
-<ul>
-<li>None: 不做优化使用这个设置，编译器的目标是减少编译成本，使调试产生预期的结果。</li>
-<li>Fast：优化编译将为大函数占用更多的时间和内存使用这个设置，编译器将尝试减少代码的大小和执行时间，不进行任何优化，需要大量编译时间。</li>
-<li>Faster：编译器执行几乎所有支持的优化，它不考虑空间和速度之间的平衡与“Fast”设置相比，该设置会增加编译时间和生成代码的性能。编译器不进行循环展开、内联函数和寄存器变量的重命名。</li>
-<li>Fastest：开启“Faster”支持的所有的优化，同时也开启内联函数和寄存器变量的重命名选项</li>
-<li>Fastest,smallest：优化代码大小这个设置启用“Faster”所有的优化，一般不增加代码大小，它还执行旨在减小代码大小的进一步优化。</li>
-</ul>
-
-
-<p>C语言方言</p>
-
-<p>GCC_C_LANGUAGE_STANDARD = C89</p>
-
-<p>警告</p>
-
-<p>检查Switch语句</p>
-
-<p>GCC_WARN_CHECK_SWITCH_STATEMENTS = YES</p>
-
-<p>隐藏局部变量</p>
-
-<p>GCC_WARN_SHADOW = YES</p>
-
-<p>隐式转换成32位的类型</p>
-
-<p>GCC_WARN_64_TO_32_BIT_CONVERSION = YES</p>
-
-<p>未完成的Objective－C协议</p>
-
-<p>GCC_WARN_ALLOW_INCOMPLETE_PROTOCOL = YES</p>
-
-<p>抑制所有的警告</p>
-
-<p>GCC_WARN_INHIBIT_ALL_WARNINGS = NO</p>
-
-<p>初始化时没有完整的括号</p>
-
-<p>GCC_WARN_INITIALIZER_NOT_FULLY_BRACKETED = YES</p>
-
-<p>例子（a没有完全的括号，b有）：</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>int a[ 2 ][ 2 ] = { 0, 1, 2, 3 };   
-</span><span class='line'>int b[ 2 ][ 2 ] = { { 0, 1 }, { 2, 3 } }; </span></code></pre></td></tr></table></div></figure>
-
-
-<p>不匹配的返回类型</p>
-
-<p>GCC_WARN_ABOUT_RETURN_TYPE = YES</p>
-
-<p>缺少括号</p>
-
-<p>GCC_WARN_MISSING_PARENTHESES = YES</p>
-
-<p>例子：</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>{  
-</span><span class='line'>    if( a )  
-</span><span class='line'>        if( b )  
-</span><span class='line'>            foo();  
-</span><span class='line'>        else  
-</span><span class='line'>            bar();  
-</span><span class='line'>} </span></code></pre></td></tr></table></div></figure>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>{  
-</span><span class='line'>    if( a )  
-</span><span class='line'>    {  
-</span><span class='line'>        if( b )  
-</span><span class='line'>            foo();  
-</span><span class='line'>        else  
-</span><span class='line'>            bar();  
-</span><span class='line'>    }  
-</span><span class='line'>} </span></code></pre></td></tr></table></div></figure>
-
-
-<p>在结构体初始化时缺少字段</p>
-
-<p>GCC_WARN_ABOUT_MISSING_FIELD_INITIALIZERS = YES</p>
-
-<p>缺少函数原型</p>
-
-<p>GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES</p>
-
-<p>在文件结尾缺少新行</p>
-
-<p>GCC_WARN_ABOUT_MISSING_NEWLINE = YES</p>
-
-<p>选择了多个定义的类型(@Selector)</p>
-
-<p>GCC_WARN_MULTIPLE_DEFINITION_TYPES_FOR_SELECTOR = NO</p>
-
-<p>严格的Selector匹配</p>
-
-<p>GCC_WARN_STRICT_SELECTOR_MATCH = YES</p>
-
-<p>把缺少函数原型当作错误</p>
-
-<p>GCC_TREAT_IMPLICIT_FUNCTION_DECLARATIONS_AS_ERRORS = YES</p>
-
-<p>把所有的警告当作错误</p>
-
-<p>GCC_TREAT_WARNINGS_AS_ERRORS = YES</p>
-
-<p>未定义的Selector</p>
-
-<p>GCC_WARN_UNDECLARED_SELECTOR = YES</p>
-
-<p>未初始化的自动变量</p>
-
-<p>GCC_WARN_UNINITIALIZED_AUTOS = YES</p>
-
-<p>未知的Pragma指令</p>
-
-<p>GCC_WARN_UNKNOWN_PRAGMAS = YES</p>
-
-<p>未使用的函数</p>
-
-<p>GCC_WARN_UNUSED_FUNCTION = YES</p>
-
-<p>未使用的标签</p>
-
-<p>GCC_WARN_UNUSED_LABEL = YES</p>
-
-<p>未使用的参数</p>
-
-<p>GCC_WARN_UNUSED_PARAMETER = YES</p>
-
-<p>未使用的值</p>
-
-<p>GCC_WARN_UNUSED_VALUE = YES</p>
-
-<p>当一个语句计算的结果显式的未使用的时候发出警告</p>
-
-<p>未使用的变量</p>
-
-<p>GCC_WARN_UNUSED_VARIABLE = YES</p>
-
-<p>警告－所有过时的函数</p>
-
-<p>GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = YES</p>
-
-<p>offsetof宏未定义使用的警告</p>
-
-<p>GCC_WARN_ABOUT_INVALID_OFFSETOF_MACRO = YES</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/01/29/hockeykit-run-on-osx/">HockeyKit Run on OSX</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2013-01-29T16:01:00+08:00'><span class='date'><span class='date-month'>Jan</span> <span class='date-day'>29</span><span class='date-suffix'>th</span>, <span class='date-year'>2013</span></span> <span class='time'>4:01 pm</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h3>引子</h3>
-
-<p>今天工作不是很忙，闲的无聊瞎逛。突然间发现了<a href="https://testflightapp.com/">TestFight</a>这个东东。很好用，但是弊端也很明显。每次打包ipa有20M+，上传服务器，进行OTA安装又要重新下载，太浪费时间了。不适合公司内部用。这个东东适合一些业余的团队在业余的时间做开发。及时性要求不高。google了之后发现还有个HockeyKit。</p>
-
-<h3>HockeyKit</h3>
-
-<p>公司现在用的是HockeyApp，这个项目之前是开源的，后来变收费了。所以我们就一直停留在老的版本，功能很有限。突然发现了新大陆HockeyKit，免费开源。支持android和ios。Nice ^_^  马上搭建起来。现在我的mac上做测试，成功后再搭建到公司服务器上。</p>
-
-<ol>
-<li>项目地址<a href="https://github.com/TheRealKerni/HockeyKit">https://github.com/TheRealKerni/HockeyKit</a>，克隆到本地，切换到master。目录有server，client，demo。只需要server就可以了。</li>
-<li>按照<a href="https://github.com/TheRealKerni/HockeyKit/wiki/Server">wiki</a>的介绍安装，首先需要一个支持php5的服务器。lion自带了apache，修改httpd.conf，让apache支持php。（lion 需要命令来启动apache <code>sudo apachectl start</code>）
-
-<ul>
-<li>确保你的服务器的httpd.conf 中 AllowOverride All ，以支持HockeyKit Server中子目录的配置重载</li>
-<li>确保服务的rewirte可用（lion默认开启 LoadModule rewrite_module libexec/apache2/mod_rewrite.so)</li>
-</ul>
-</li>
-<li>其他的按照文档进行就可以了。大功告成， ^_^  最后点击install application，如果出现alertview提示错误，重新回到步骤2检查一下是否设置了AllowOverride All。</li>
-</ol>
-
-
-<blockquote><p>本该淡淡然</p></blockquote>
-</div>
-  
-  
-
-
-    </article>
   
   
     <article>
@@ -795,66 +226,6 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2013/01/08/mac-android-eclipse/">MAC下Android的Eclipse开发环境的搭建</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2013-01-08T23:52:00+08:00'><span class='date'><span class='date-month'>Jan</span> <span class='date-day'>8</span><span class='date-suffix'>th</span>, <span class='date-year'>2013</span></span> <span class='time'>11:52 pm</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h4>一．Eclipse的下载</h4>
-
-<p>   到网站：<a href="http://www.eclipse.org/downloads/">http://www.eclipse.org/downloads/</a>，由于我们是用Java开发的所以步骤如下：</p>
-
-<ol>
-<li><p>找到“Eclipse IDE for java Developers”此处右上角会根据你当前使用的系统自动选择，Mac下就会自动选择位“Mac OS X（Cocoa）”</p></li>
-<li><p>然后点击右边的“Mac OS X 64bit”（这里我的Pro是i5处理器可以用64位的），根据你的机器也可以选择“Mac OS X 32bit”进行下载。</p></li>
-</ol>
-
-
-<h4>二．安装ADT</h4>
-
-<p>   <strong><em>ADT</em></strong>是Android应用程序的开发环境</p>
-
-<ol>
-<li><p>点击菜单中的Help ——> Install New Software⋯ ;</p></li>
-<li><p>在弹出的对话框中有个“Work with”，在右边的输入栏中输入：<code>https://dl-ssl.google.com/android/eclipse/</code> 然后下面就会pending出来一个“Developer Tools”，勾选上，然后一路的Next下去就可以安装完成。(如果想开发NDK，顺便选上NDK plugins)</p></li>
-</ol>
-
-
-<h4>三．设定ADT</h4>
-
-<p>   在菜单栏Refactor中如果能看到Android的标签表示ADT安装成功。</p>
-
-<ol>
-<li><p>下载Android SDK、NDK（通过HomeBrew安装）</p></li>
-<li><p>安装Android SDK，然后在菜单栏Eclipse —> Preferences（偏好设置）,会弹出一个Preferences对话框，选Android，然后在SDK Loaction中填入刚下载的SDK的路径或者点击右边的Browser选择。</p></li>
-<li><p>生成模拟器，菜单栏Window —> Android SDK and AVD Manger 会弹出对话框，然后在对话框中选择new开始按自己的需求新建模拟器，至此就大功告成了！</p></li>
-</ol>
-
-
-<blockquote><p>本该淡淡然~~~</p></blockquote>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
       <h1 class="entry-title"><a href="/blog/2013/01/05/mac-linux-date/">Mac Linux Date</a></h1>
     
     
@@ -913,7 +284,7 @@ date -r $(expr $(date '+%s') + 86400)
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2013/01/03/2013-plan/">2013 计划</a></h1>
+      <h1 class="entry-title"><a href="/blog/2012/12/19/in-a-word/">In a Word</a></h1>
     
     
       <p class="meta">
@@ -922,24 +293,943 @@ date -r $(expr $(date '+%s') + 86400)
 
 
 
-<time class='entry-date' datetime='2013-01-03T23:56:00+08:00'><span class='date'><span class='date-month'>Jan</span> <span class='date-day'>3</span><span class='date-suffix'>rd</span>, <span class='date-year'>2013</span></span> <span class='time'>11:56 pm</span></time>
+<time class='entry-date' datetime='2012-12-19T10:53:00+08:00'><span class='date'><span class='date-month'>Dec</span> <span class='date-day'>19</span><span class='date-suffix'>th</span>, <span class='date-year'>2012</span></span> <span class='time'>10:53 am</span></time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><blockquote><p>人生短短数十载，本该淡淡然。</p></blockquote>
+  <div class="entry-content"><ul>
+<li><a href="http://xingfuke.net/xingfuke766">选择之困惑——为何多即是少？</a></li>
+<li><a href="http://www.williamlong.info/archives/3062.html">程序员真的很懒&hellip;</a></li>
+<li>自卑大多来源于虚荣</li>
+<li>语言,不过是人们对认知世界的一种表达方式</li>
+<li>一切技术的进步，都是为了满足人们日益变懒的需求</li>
+<li>“the medium is the message” (媒介才是信息)。真正带来巨大影响的，不是内容（content），而是媒介（medium）本身。</li>
+</ul>
 
-<p>so，今年不能像往年那样虚度了。必须做点什么了。</p>
+
+<blockquote><p>本该淡淡然~~~</p></blockquote>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/08/24/info-plist-common-key/">info.plist常用key介绍</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2012-08-24T16:41:00+08:00'><span class='date'><span class='date-month'>Aug</span> <span class='date-day'>24</span><span class='date-suffix'>th</span>, <span class='date-year'>2012</span></span> <span class='time'>4:41 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><ul>
+<li>UIRequiresPersistentWiFi 在程序中弹出wifi选择的key（系统设置中需要将wifi提示打开）</li>
+<li>UIAppFonts 内嵌字体<a href="http://www.minroad.com/?p=412">详细介绍</a></li>
+<li>UIApplicationExitsOnSuspend 程序是否在后台运行，自己在进入后台的时候exit(0)是很傻的办法</li>
+<li>UIBackgroundModes 后台运行时的服务，具体看iOS4的后台介绍</li>
+<li>UIDeviceFamily array类型（1为iPhone和iPod touch设备，2为iPad)</li>
+<li>UIFileSharingEnabled 开启itunes共享document文件夹</li>
+<li>UILaunchImageFile 相当于Default.png（更名而已）</li>
+<li>UIPrerenderedIcon icon上是否有高光</li>
+<li>UIRequiredDeviceCapabilities 设备需要的功能<a href="http://developer.apple.com/library/mac/#documentation/General/Reference/InfoPlistKeyReference/Articles/iPhoneOSKeys.html%23//apple_ref/doc/uid/TP40009252-SW3">具体点击这里查看</a></li>
+<li>UIStatusBarHidden 状态栏隐藏（和程序内的区别是在于显示Default.png已经生效）</li>
+<li>UIStatusBarStyle 状态栏类型</li>
+<li>UIViewEdgeAntialiasing 是否开启抗锯齿</li>
+<li>CFBundleDisplayName app显示名</li>
+<li>CFBundleIconFile、CFBundleIconFiles 图标</li>
+<li>CFBundleName 与CFBundleDisplayName的区别在于这个是短名，16字符之内</li>
+<li>CFBundleVersion 版本</li>
+<li>CFBundleURLTypes 自定义url，用于利用url弹回程序</li>
+<li>CFBundleLocalizations 本地资源的本地化语言，用于itunes页面左下角显示本地话语种</li>
+<li>CFBundleDevelopmentRegion 也是本地化相关，如果用户所在地没有相应的语言资源，则用这个key的value来作为默认</li>
+</ul>
+
+
+<blockquote><p>本该淡淡然~~~</p></blockquote>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/08/16/iphone-system-common-dir/">iPhone 系统常用目录路径位置</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2012-08-16T21:09:00+08:00'><span class='date'><span class='date-month'>Aug</span> <span class='date-day'>16</span><span class='date-suffix'>th</span>, <span class='date-year'>2012</span></span> <span class='time'>9:09 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><ol>
+<li>【/Applications】
+常用软件的安装目录</li>
+<li>【/private /var/ mobile/Media /iphone video Recorder】
+录像文件存放目录</li>
+<li>【/private /var/ mobile/Media /DCIM】
+相机拍摄的照片文件存放目录</li>
+<li>【/private/var/ mobile /Media/iTunes_Control/Music】
+iTunes上传的多媒体文件（例如MP3、MP4等）存放目录，文件没有被修改，但是文件名字被修改了，直接下载到电脑即可读取。</li>
+<li>【/private /var/root/Media/EBooks】
+电子书存放目录</li>
+<li>【/Library/Ringtones】
+系统自带的来电铃声存放目录（用iTunes将文件转换为ACC文件，把后缀名改成.m4r,用iPhone_PC_Suite传到/Library/Ringtones即可）</li>
+<li>【/private/var/ mobile /Library/AddressBook】
+系统电话本的存放目录。</li>
+<li>【/private /var/ mobile/Media /iphone Recorder】
+录音文件存放目录</li>
+<li>【/Applications/Preferences.app/zh_CN.lproj】
+软件Preferences.app的中文汉化文件存放目录</li>
+<li>【/Library/Wallpaper】
+系统墙纸的存放目录</li>
+<li>【/System/Library/Audio/UISounds】
+系统声音文件的存放目录</li>
+<li>【/private/var/root/Media/PXL】
+ibrickr上传安装程序建立的一个数据库，估计和windows的uninstall记录差不多。</li>
+<li>【/bin】
+和linux系统差不多，是系统执行指令的存放目录。</li>
+<li>【/private/var/ mobile /Library/SMS】
+系统短信的存放目录</li>
+<li>【/private/var/run】
+系统进程运行的临时目录？（查看这里可以看到系统启动的所有进程）</li>
+<li>【/private/var/logs/CrashReporter】
+系统错误记录报告</li>
+<li>【/System/Library/Fonts/Cache】锁屏时钟字体体 ，记得备份原始的字体，然后将 &ldquo;LockClock.ttf&rdquo; 复制进去，然后重启或者respring iphone</li>
+</ol>
+
+
+<hr />
+
+<p>分割线（补充说明）</p>
+
+<hr />
+
+<ol>
+<li>/private/var/mobile 　新刷完的机器，要在这个文件夹下建一个Documents的目录。</li>
+<li>/private/var/mobile/Applications 　通过AppStore和iTunes安装的程序都在里面。</li>
+<li>/private/var/stash 　这个文件夹下的Applications目录里面是所有通过Cydia和app安装的程序，Ringtones目录里是所有的手机铃音，自制铃音直接拷在里面即可，Themes目录里是所有Winterboard主题，可以手工修改。</li>
+<li>/var/mobile/Media/ROMs/GBA 　gpsPhone模拟器存放rom的目录。</li>
+<li>/var/mobile/Media/textReader 　textReader看书软件读取的电子书的存放路径。</li>
+<li>/System/Library/Fonts/Cache（系统字体目录，要替换的字体放在该目录下，权限644不变）</li>
+<li>/private/var/mobile/Media/Maps（离线地图目录，把地图文件夹放到该目录下，文件夹赋予777权限）</li>
+<li>/private/var/mobile/Library/Downloads （ipa文件存放目录，用Installous安装）</li>
+<li>/private/var/mobile/Library/Keyboard （系统拼音字库文件位置）</li>
+<li>/var/stash/Themes.XXXXXX （winterboard主题文件存放路径）</li>
+<li>/private/var/mobile/Media/DCIM/999APPLE （系统自带截屏文件存放路径）</li>
+</ol>
+
+
+<hr />
+
+<p>来给个备份时候常用的路径（摘抄通杀版~）</p>
+
+<ul>
+<li>/private/var/mobile/Library/AddressBook → 联系人</li>
+<li>/private/var/mobile/Library/CallHistory → 通话记录</li>
+<li>/private/var/mobile/Library/SMS → 短信</li>
+<li>/private/var/mobile/Library/Notes → 备忘录</li>
+<li>/private/var/mobile/Library/Safari → Safari 浏览器保存的书签等</li>
+<li>/private/var/mobile/Library/Mail → 电子邮件</li>
+<li>/private/var/mobile/Library/MCallShow →信安易来电秀注册文件</li>
+<li>/private/var/mobile/Media/DCIM →照片里面的胶卷</li>
+<li>/private/var/mobile/Media/Photos →照片里面的图片</li>
+<li>/private/var/mobile/Media/Videos →Cycorder摄像机软件拍摄文件保存路径（可以用WINSCP把MP4文件传到这里用它来看哟^_^）</li>
+<li>/private/var/mobile/Library/Preferences com.apple.mobilephone.speeddial.plist →个人收藏（快速拨号）</li>
+<li>/private/var/mobile/Media/Recordings →语音备忘录</li>
+</ul>
+
+
+<blockquote><p>本该淡淡然~~~</p></blockquote>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/04/24/repack-of-git-repository-fails/">Repack of Git Repository Fails</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2012-04-24T11:00:00+08:00'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>24</span><span class='date-suffix'>th</span>, <span class='date-year'>2012</span></span> <span class='time'>11:00 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h3>question</h3>
+
+<p>I have a git repository residing on a server with limited memory. When I try to clone an existing repository from the server I get the following error</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Cloning into 'carRecognition'...
+</span><span class='line'>remote: Counting objects: 3012, done.
+</span><span class='line'>error: git upload-pack: git-pack-objects died with error.
+</span><span class='line'>fatal: git upload-pack: aborting due to possible repository corruption on the remote side.
+</span><span class='line'>remote: aborting due to possible repository corruption on the remote side.
+</span><span class='line'>fatal: early EOF
+</span><span class='line'>fatal: index-pack failed</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>solution</h3>
+
+<p>Your solution has got you a working copy locally and remotely, but will cause problems again when the remote repository decides to repack itself again. Fortunately, you can set config options that will reduce the amount of memory needed for repacking in both repositories &ndash; these essentially make the command line parameters that you added into the default options when repacking. So, you should log in to the remote, change into the repository and do:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git config pack.windowMemory 10m
+</span><span class='line'>git config pack.packSizeLimit 20m</span></code></pre></td></tr></table></div></figure>
+
+
+<p>You may want to do the same on your local repository. (Incidentally I guess that either your repository is very large or these are machines with little memory - these values seem very low to me.)</p>
+
+<p>For what it&rsquo;s worth, when getting malloc failures on repacking very large repositories in the past, I&rsquo;ve also changed the values of core.packedgitwindowsize, core.packedgitlimit, core.deltacachesize, pack.deltacachesize, pack.window and pack.threads but it sounds as if you don&rsquo;t need any further options :)</p>
+
+<blockquote><p>本该淡淡然~~~</p></blockquote>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/04/18/android-development-on-os-x-without-eclipse/">Android Development on OS X Without Eclipse</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2012-04-18T23:44:00+08:00'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>18</span><span class='date-suffix'>th</span>, <span class='date-year'>2012</span></span> <span class='time'>11:44 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><ul>
+<li><a href="http://blog.beyondthecorner.co.uk/2011/01/15/android-on-os-x-without-eclipse/">出处</a></li>
+</ul>
+
+
+<h3>介绍</h3>
+
+<p>因为我只是想在OS X下编译Android项目，所以不需要IDE（主要是我不喜欢Eclipse）。首先搭建开发环境。 下面是详细步骤.</p>
+
+<h3>Homebrew</h3>
+
+<p>To get the ball rolling we’re going to start with everyone’s favourite missing package manager, <a href="(http://livv.github.com/blog/2012/02/16/homebrew/">Homebrew</a>. If you haven’t got Homebrew installed already then you’ll be glad to know that installation is pretty simple to do;</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>ruby -e "$(curl -fsSLk https://gist.github.com/raw/323731/install_homebrew.rb)"</span></code></pre></td></tr></table></div></figure>
+
+
+<p>If you haven’t got Xcode installed yet this script will install it for you. If this is the case you may want to go get a drink as it may take some time.</p>
+
+<h3>Android SDK</h3>
+
+<p>Now that we have Homebrew installed we can get the Android SDK tools installed. Thanks to Homebrew this is a simple process and you don’t even have to visit a website, this appeals to the exceedingly lazy developer in me. Just go ahead and run;</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>brew install android</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Once Homebrew has installed the Android SDK you can just straight away run the android command thanks to Homebrew setting everything up for you. So go ahead and run the Android SDK and AVD manager by running android on the command line. Then you can make your AVD and install the desired versions of the Android SDK. You may need to update your android tools since it appears that the Homebrew formula is a little out of date with the current version, but this is simple enough to do.
+At this point let’s create an android project to make sure that everything is ready to go. I created a HelloAndroid application targeted for Android 2.1;</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>android create project --package com.example.helloandroid --activity HelloAndroid --target 3 --path &lt;path-to-project-folder&gt;/HelloAndroid</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Then to make sure that everything is set up right and working fire up your Android emulator and then run ant install. Once this is done go ahead and make sure the app runs on the emulator. Assuming this works then run ant uninstall to uninstall the app from the emulator.</p>
+
+<h3>Apache Maven</h3>
+
+<p>Whilst I do prefer to avoid a full blown IDE I do like some automation in places and Apache Maven is a big old help with this. The first thing to do is get maven installed, again thanks to Homebrew this is simple;</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>brew install maven</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Now we need to get the project set up with maven. We will be using the Maven Android Plugin to help us out. The first thing we need to do is remove the following files;</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rm -r bin build.xml build.properties libs</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Next we setup our environment for the Maven Android Plugin. We need to set a ANDROID_HOME environment variable. In .bash_profile add the following line;</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>export ANDROID_HOME=`brew --prefix android`</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Setting up the project for use with maven needs the following pom.xml file created in the root of the project;</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+</span><span class='line'>&lt;project xmlns="http://maven.apache.org/POM/4.0.0"
+</span><span class='line'>  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+</span><span class='line'>  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"&gt;
+</span><span class='line'>  &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+</span><span class='line'>  &lt;groupId&gt;com.example.helloandroid&lt;/groupId&gt;
+</span><span class='line'>  &lt;artifactId&gt;helloandroid&lt;/artifactId&gt;
+</span><span class='line'>  &lt;packaging&gt;apk&lt;/packaging&gt;
+</span><span class='line'>  &lt;version&gt;0.0.1-SNAPSHOT&lt;/version&gt;
+</span><span class='line'>  &lt;name&gt;HelloAndroid&lt;/name&gt;
+</span><span class='line'>  
+</span><span class='line'>  &lt;dependencies&gt;
+</span><span class='line'>    &lt;dependency&gt;
+</span><span class='line'>      &lt;groupId&gt;com.google.android&lt;/groupId&gt;
+</span><span class='line'>      &lt;artifactId&gt;android&lt;/artifactId&gt;
+</span><span class='line'>      &lt;version&gt;2.1.2&lt;/version&gt;
+</span><span class='line'>      &lt;scope&gt;provided&lt;/scope&gt;
+</span><span class='line'>    &lt;/dependency&gt;
+</span><span class='line'>  &lt;/dependencies&gt;
+</span><span class='line'>  
+</span><span class='line'>  &lt;build&gt;
+</span><span class='line'>    &lt;sourceDirectory&gt;src&lt;/sourceDirectory&gt;
+</span><span class='line'>    &lt;plugins&gt;
+</span><span class='line'>      &lt;plugin&gt;
+</span><span class='line'>        &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+</span><span class='line'>        &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;
+</span><span class='line'>        &lt;configuration&gt;
+</span><span class='line'>          &lt;source&gt;1.6&lt;/source&gt;
+</span><span class='line'>          &lt;target&gt;1.6&lt;/target&gt;
+</span><span class='line'>        &lt;/configuration&gt;
+</span><span class='line'>      &lt;/plugin&gt;
+</span><span class='line'>      &lt;plugin&gt;
+</span><span class='line'>        &lt;groupId&gt;com.jayway.maven.plugins.android.generation2&lt;/groupId&gt;
+</span><span class='line'>        &lt;artifactId&gt;maven-android-plugin&lt;/artifactId&gt;
+</span><span class='line'>        &lt;configuration&gt;
+</span><span class='line'>          &lt;sdk&gt;
+</span><span class='line'>            &lt;path&gt;${env.ANDROID_HOME}&lt;/path&gt;
+</span><span class='line'>            &lt;platform&gt;1.6&lt;/platform&gt;
+</span><span class='line'>          &lt;/sdk&gt;
+</span><span class='line'>          &lt;emulator&gt;
+</span><span class='line'>             &lt;avd&gt;standard&lt;/avd&gt;
+</span><span class='line'>             &lt;wait&gt;6000&lt;/wait&gt;
+</span><span class='line'>          &lt;/emulator&gt;
+</span><span class='line'>          &lt;deleteConflictingFiles&gt;true&lt;/deleteConflictingFiles&gt;
+</span><span class='line'>        &lt;/configuration&gt;
+</span><span class='line'>        &lt;extensions&gt;true&lt;/extensions&gt;
+</span><span class='line'>      &lt;/plugin&gt;
+</span><span class='line'>    &lt;/plugins&gt;
+</span><span class='line'>  &lt;/build&gt;
+</span><span class='line'>  
+</span><span class='line'>&lt;/project&gt;</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Once the pom.xml file is created then we can see if it is all set up right by running;</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>mvn help:describe -Dplugin=android</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Running this should give details about goals available for the android maven plugin. For reference here are the goals;</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+<span class='line-number'>60</span>
+<span class='line-number'>61</span>
+<span class='line-number'>62</span>
+<span class='line-number'>63</span>
+<span class='line-number'>64</span>
+<span class='line-number'>65</span>
+<span class='line-number'>66</span>
+<span class='line-number'>67</span>
+<span class='line-number'>68</span>
+<span class='line-number'>69</span>
+<span class='line-number'>70</span>
+<span class='line-number'>71</span>
+<span class='line-number'>72</span>
+<span class='line-number'>73</span>
+<span class='line-number'>74</span>
+<span class='line-number'>75</span>
+<span class='line-number'>76</span>
+<span class='line-number'>77</span>
+<span class='line-number'>78</span>
+<span class='line-number'>79</span>
+<span class='line-number'>80</span>
+<span class='line-number'>81</span>
+<span class='line-number'>82</span>
+<span class='line-number'>83</span>
+<span class='line-number'>84</span>
+<span class='line-number'>85</span>
+<span class='line-number'>86</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Name: Maven Android Plugin - maven-android-plugin
+</span><span class='line'>Description: Maven Plugin for Android
+</span><span class='line'>Group Id: com.jayway.maven.plugins.android.generation2
+</span><span class='line'>Artifact Id: maven-android-plugin
+</span><span class='line'>Version: 2.8.3
+</span><span class='line'>Goal Prefix: android
+</span><span class='line'> 
+</span><span class='line'>This plugin has 16 goals:
+</span><span class='line'> 
+</span><span class='line'>android:apk
+</span><span class='line'>  Description: Creates the apk file. By default signs it with debug keystore.
+</span><span class='line'>    Change that by setting configuration parameter
+</span><span class='line'>    &lt;sign&gt;&lt;debug&gt;false&lt;/debug&gt;&lt;/sign&gt;.
+</span><span class='line'> 
+</span><span class='line'>android:deploy
+</span><span class='line'>  Description: Deploys the built apk file, or another specified apk, to a
+</span><span class='line'>    connected device.
+</span><span class='line'>    Automatically performed when running mvn integration-test (or mvn install)
+</span><span class='line'>    on a project with instrumentation tests.
+</span><span class='line'> 
+</span><span class='line'>android:deploy-dependencies
+</span><span class='line'>  Description: Deploys all directly declared dependencies of &lt;type&gt;apk&lt;/type&gt;
+</span><span class='line'>    in this project's pom.
+</span><span class='line'>    Usually used in a project with instrumentation tests, to deploy the apk to
+</span><span class='line'>    test onto the device before running the deploying and running the
+</span><span class='line'>    instrumentation tests apk.
+</span><span class='line'>    Automatically performed when running mvn integration-test (or mvn install)
+</span><span class='line'>    on a project with instrumentation tests.
+</span><span class='line'> 
+</span><span class='line'>android:dex
+</span><span class='line'>  Description: Converts compiled Java classes to the Android dex format.
+</span><span class='line'> 
+</span><span class='line'>android:emulator-start
+</span><span class='line'>  Description: EmulatorStartMojo can start the Android Emulator with a
+</span><span class='line'>    specified Android Virtual Device (avd).
+</span><span class='line'> 
+</span><span class='line'>android:emulator-stop
+</span><span class='line'>  Description: EmulatorStartMojo can stop the Android Emulator with a
+</span><span class='line'>    specified Android Virtual Device (avd).
+</span><span class='line'> 
+</span><span class='line'>android:generate-sources
+</span><span class='line'>  Description: Generates R.java based on resources specified by the resources
+</span><span class='line'>    configuration parameter.
+</span><span class='line'>    Generates java files based on aidl files.
+</span><span class='line'>     
+</span><span class='line'>    If the configuration parameter deleteConflictingFiles is true (which it is
+</span><span class='line'>    by default), this goal has the following side-effects:
+</span><span class='line'>    - deletes any R.java files found in the source directory.
+</span><span class='line'>    - deletes any .java files with the same name as an .aidl file found in the
+</span><span class='line'>      source directory.
+</span><span class='line'>    - deletes any Thumbs.db files found in the resource directory.
+</span><span class='line'> 
+</span><span class='line'>android:instrument
+</span><span class='line'>  Description: Runs the instrumentation apk on device.
+</span><span class='line'> 
+</span><span class='line'>android:internal-integration-test
+</span><span class='line'>  Description: Internal. Do not use.
+</span><span class='line'>    Called automatically when the lifecycle reaches phase integration-test.
+</span><span class='line'>    Figures out whether to call goals in this phase; and if so, calls
+</span><span class='line'>    android:instrument.
+</span><span class='line'> 
+</span><span class='line'>android:internal-pre-integration-test
+</span><span class='line'>  Description: Internal. Do not use.
+</span><span class='line'>    Called automatically when the lifecycle reaches phase pre-integration-test.
+</span><span class='line'>    Figures out whether to call goals in this phase; and if so, calls
+</span><span class='line'>    android:deploy-dependencies and android:deploy.
+</span><span class='line'> 
+</span><span class='line'>android:pull
+</span><span class='line'>  Description: Copy file/dir from device.
+</span><span class='line'> 
+</span><span class='line'>android:push
+</span><span class='line'>  Description: Copy file/dir to device.
+</span><span class='line'> 
+</span><span class='line'>android:redeploy
+</span><span class='line'>  Description: Redeploys the built apk file, or another specified apk, to a
+</span><span class='line'>    connected device. This simply tries to undeploy the APK and re-deploy it.
+</span><span class='line'> 
+</span><span class='line'>android:undeploy
+</span><span class='line'>  Description: Undeploys the built apk file, or another specified apk, from a
+</span><span class='line'>    connected device.
+</span><span class='line'> 
+</span><span class='line'>android:unpack
+</span><span class='line'>  Description: unpack library.
+</span><span class='line'> 
+</span><span class='line'>android:zipalign
+</span><span class='line'>  Description: ZipalignMojo can run the zipalign command against the apk.</span></code></pre></td></tr></table></div></figure>
+
+
+<p>If you see that then you are all set and ready to go. I’m hoping to get some more blog posts up about my development exploits on android. If you want to read more about the maven android plugin then have a look at their website <a href="http://code.google.com/p/maven-android-plugin.">http://code.google.com/p/maven-android-plugin.</a></p>
+
+<blockquote><p>本该淡淡然~~~</p></blockquote>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/04/18/mac-os-timing-start-script/">Mac OS Timing Start Script</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2012-04-18T16:54:00+08:00'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>18</span><span class='date-suffix'>th</span>, <span class='date-year'>2012</span></span> <span class='time'>4:54 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>前面的文章提到过<a href="http://livv.github.com/blog/2012/03/01/linux-crontab/">Linux Crontab</a>，用法几乎一样。</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo crontab -e//回车后输入密码
+</span><span class='line'>//进入VI编辑，输入
+</span><span class='line'>* * * * * say hello//这个地方可以放脚本的路径
+</span><span class='line'>保存即可。
+</span><span class='line'>这样每分钟都会听到hello了</span></code></pre></td></tr></table></div></figure>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>五个星星表示
+</span><span class='line'>minute — 分钟，从 0 到 59 之间的任何整数 
+</span><span class='line'>hour — 小时，从 0 到 23 之间的任何整数 
+</span><span class='line'>day — 日期，从 1 到 31 之间的任何整数（如果指定了月份，必须是该月份的有效日期） 
+</span><span class='line'>month — 月份，从 1 到 12 之间的任何整数（或使用月份的英文简写如 jan、feb 等等） 
+</span><span class='line'>dayofweek — 星期，从 0 到 7 之间的任何整数，这里的 0 或 7 代表星期日（或使用星期的英文简写如 sun、mon 等等）</span></code></pre></td></tr></table></div></figure>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>crontab -l显示目前所有的任务
+</span><span class='line'>crontab -r删除所有的任务
+</span><span class='line'>crontab -e编辑任务</span></code></pre></td></tr></table></div></figure>
+
 
 <hr />
 
 <ul>
-<li>计划1 做点自己喜欢的事情</li>
-<li>计划2 做点有意思的事情</li>
+<li>以上方法好像不能调用本地sh脚本，改用<code>~/Library/LaunchAgents/vv.redmine.bak.plist</code> 这样每天12:30调用<code>/Users/wei/architect/redmine_bak/redmine_bak.sh</code></li>
 </ul>
 
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+</span><span class='line'>&lt;!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"&gt;
+</span><span class='line'>&lt;plist version="1.0"&gt;
+</span><span class='line'>&lt;dict&gt;
+</span><span class='line'>        &lt;key&gt;Label&lt;/key&gt;
+</span><span class='line'>        &lt;string&gt;vv.redmine.bak&lt;/string&gt;
+</span><span class='line'>        &lt;key&gt;ProgramArguments&lt;/key&gt;
+</span><span class='line'>        &lt;array&gt;
+</span><span class='line'>                &lt;string&gt;/Users/wei/architect/redmine_bak/redmine_bak.sh&lt;/string&gt;
+</span><span class='line'>        &lt;/array&gt;
+</span><span class='line'>        &lt;key&gt;StartCalendarInterval&lt;/key&gt;
+</span><span class='line'>        &lt;array&gt;
+</span><span class='line'>                &lt;dict&gt;
+</span><span class='line'>                        &lt;key&gt;Minute&lt;/key&gt;
+</span><span class='line'>                        &lt;integer&gt;30&lt;/integer&gt;
+</span><span class='line'>                &lt;/dict&gt;
+</span><span class='line'>                &lt;dict&gt;
+</span><span class='line'>                        &lt;key&gt;Hour&lt;/key&gt;
+</span><span class='line'>                        &lt;integer&gt;12&lt;/integer&gt;
+</span><span class='line'>                &lt;/dict&gt;
+</span><span class='line'>        &lt;/array&gt;
+</span><span class='line'>&lt;/dict&gt;
+</span><span class='line'>&lt;/plist&gt;</span></code></pre></td></tr></table></div></figure>
+
+
+<blockquote><p>本该淡淡然~~~</p></blockquote>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/04/17/mac-auto-run-tomcat/">Mac Auto Run Tomcat</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2012-04-17T17:22:00+08:00'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>17</span><span class='date-suffix'>th</span>, <span class='date-year'>2012</span></span> <span class='time'>5:22 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><ul>
+<li>launchd_wrapper.sh</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>#!/bin/bash
+</span><span class='line'>
+</span><span class='line'># NOTE: this is an OSX launchd wrapper shell script for Tomcat (to be placed in $CATALINA_HOME/bin)
+</span><span class='line'>
+</span><span class='line'>CATALINA_HOME=/Users/username/tomcat
+</span><span class='line'>
+</span><span class='line'>function shutdown() {
+</span><span class='line'>    date
+</span><span class='line'>    echo "Shutting down Tomcat"
+</span><span class='line'>    $CATALINA_HOME/bin/catalina.sh stop
+</span><span class='line'>}
+</span><span class='line'>
+</span><span class='line'>date
+</span><span class='line'>echo "Starting Tomcat"
+</span><span class='line'>export CATALINA_PID=/tmp/$$
+</span><span class='line'>
+</span><span class='line'># Uncomment to increase Tomcat's maximum heap allocation
+</span><span class='line'># export JAVA_OPTS=-Xmx512M $JAVA_OPTS
+</span><span class='line'>
+</span><span class='line'>. $CATALINA_HOME/bin/catalina.sh start
+</span><span class='line'>
+</span><span class='line'># Allow any signal which would kill a process to stop Tomcat
+</span><span class='line'>trap shutdown HUP INT QUIT ABRT KILL ALRM TERM TSTP
+</span><span class='line'>
+</span><span class='line'>echo "Waiting for `cat $CATALINA_PID`"
+</span><span class='line'>wait `cat $CATALINA_PID`</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>org.apache.tomcat.plist</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+</span><span class='line'>&lt;!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"&gt;
+</span><span class='line'>&lt;plist version="1.0"&gt;&lt;!-- NOTE: place this file in /Library/LaunchDaemons --&gt;
+</span><span class='line'>    &lt;dict&gt;
+</span><span class='line'>        &lt;key&gt;Label&lt;/key&gt;
+</span><span class='line'>        &lt;string&gt;org.apache.tomcat&lt;/string&gt;
+</span><span class='line'>        &lt;key&gt;OnDemand&lt;/key&gt;
+</span><span class='line'>        &lt;false/&gt;
+</span><span class='line'>        &lt;key&gt;RunAtLoad&lt;/key&gt;
+</span><span class='line'>        &lt;true/&gt;
+</span><span class='line'>        &lt;key&gt;EnvironmentVariables&lt;/key&gt;
+</span><span class='line'>        &lt;dict&gt;
+</span><span class='line'>            &lt;key&gt;CATALINA_HOME&lt;/key&gt;
+</span><span class='line'>            &lt;string&gt;/Users/username/tomcat&lt;/string&gt;
+</span><span class='line'>            &lt;key&gt;JAVA_HOME&lt;/key&gt;
+</span><span class='line'>            &lt;string&gt;/Library/Java/Home&lt;/string&gt;
+</span><span class='line'>        &lt;/dict&gt;
+</span><span class='line'>        &lt;key&gt;ProgramArguments&lt;/key&gt;
+</span><span class='line'>        &lt;array&gt;
+</span><span class='line'>            &lt;string&gt;/Users/username/tomcat/bin/launchd_wrapper.sh&lt;/string&gt;
+</span><span class='line'>        &lt;/array&gt;
+</span><span class='line'>        &lt;key&gt;ServiceDescription&lt;/key&gt;
+</span><span class='line'>        &lt;string&gt;Tomcat&lt;/string&gt;
+</span><span class='line'>        &lt;key&gt;StandardErrorPath&lt;/key&gt;
+</span><span class='line'>        &lt;string&gt;/Users/username/tomcat/logs/launchd.stderr&lt;/string&gt;
+</span><span class='line'>        &lt;key&gt;StandardOutPath&lt;/key&gt;
+</span><span class='line'>        &lt;string&gt;/Users/username/tomcat/logs/launchd.stdout&lt;/string&gt;
+</span><span class='line'>        &lt;key&gt;UserName&lt;/key&gt;
+</span><span class='line'>        &lt;string&gt;root&lt;/string&gt;&lt;!-- MUST be root in order to run tomcat on port 80 --&gt;
+</span><span class='line'>    &lt;/dict&gt;
+</span><span class='line'>&lt;/plist&gt;</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>tomcat</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>#!/bin/bash
+</span><span class='line'>
+</span><span class='line'># convenience script for easily starting/stopping tomcat on OSX
+</span><span class='line'># (to be placed in /usr/local/bin. remember to run chmod +x on it)
+</span><span class='line'>if [ 'start' = "$1" ]; then 
+</span><span class='line'>    echo Starting tomcat service...
+</span><span class='line'>    COMMAND=load
+</span><span class='line'>elif [ 'stop' = "$1" ]; then 
+</span><span class='line'>    echo Stopping tomcat service...
+</span><span class='line'>    COMMAND=unload
+</span><span class='line'>fi
+</span><span class='line'>
+</span><span class='line'>if [ 'restart' = "$1" ]; then
+</span><span class='line'>    echo Restarting tomcat service...
+</span><span class='line'>    sudo launchctl unload -w /Library/LaunchDaemons/org.apache.tomcat.plist
+</span><span class='line'>    sudo launchctl load -w /Library/LaunchDaemons/org.apache.tomcat.plist
+</span><span class='line'>elif [ -n "$COMMAND" ]; then 
+</span><span class='line'>    sudo launchctl $COMMAND -w /Library/LaunchDaemons/org.apache.tomcat.plist
+</span><span class='line'>fi</span></code></pre></td></tr></table></div></figure>
+
+
+<blockquote><p>本该淡淡然~~~</p></blockquote>
 </div>
   
   
@@ -976,11 +1266,11 @@ date -r $(expr $(date '+%s') + 86400)
       </li>
     
       <li class="post">
-        <a href="/blog/2013/06/27/uploade2appstore-via-command-line/">上传appstore通过命令行</a>
+        <a href="/blog/2013/06/21/git-log-geek/">Git Log Geek</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2013/06/21/git-log-geek/">Git Log Geek</a>
+        <a href="/blog/2013/06/13/mac-terminal-color/">Mac Terminal 彩色</a>
       </li>
     
   </ul>
@@ -1016,7 +1306,7 @@ date -r $(expr $(date '+%s') + 86400)
     <li class="loading">Status updating&#8230;</li>
   </ul>
   
-  <a href="https://github.com/livv">@livv</a> on GitHub
+  <a href="https://github.com/vvlvv">@vvlvv</a> on GitHub
   
   <script type="text/javascript">
     $(document).ready(function(){
@@ -1029,7 +1319,7 @@ date -r $(expr $(date '+%s') + 86400)
         }
 
         github.showRepos({
-            user: 'livv',
+            user: 'vvlvv',
             count: 0,
             skip_forks: true,
             target: '#gh_repos'

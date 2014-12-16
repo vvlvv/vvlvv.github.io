@@ -575,56 +575,6 @@ URL4
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2013/06/27/uploade2appstore-via-command-line/">上传appstore通过命令行</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2013-06-27T13:41:00+08:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>27</span><span class='date-suffix'>th</span>, <span class='date-year'>2013</span></span> <span class='time'>1:41 pm</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><blockquote><p>未验证（先记录下来，后续研究）<a href="http://stackoverflow.com/questions/11888122/how-to-upload-an-ios-app-to-the-app-store-via-command-line">来源</a></p></blockquote>
-
-<ul>
-<li><p>Make sure you have an application in &ldquo;waiting to upload&rdquo; state.</p></li>
-<li><p>Create a new keychain Item Named: Xcode:itunesconnect.apple.com provide your credentials to itunes connect.</p></li>
-<li><p>From the command line:</p></li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>xcrun -sdk iphoneos Validation -online -upload -verbose "path to ipa"</span></code></pre></td></tr></table></div></figure>
-
-
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>This is perfect. I've lots of clients and customers. I want to upload apps on behalf of my clients/customers, how can I create respective key chain items and provide them during "xcrun" command? – Satyam svv Dec 1 '12 at 2:28
-</span><span class='line'>
-</span><span class='line'>you can create a ad-hoc key before running xcrun and discart it after the upload is finished security add-generic-password -s Xcode:itunesconnect.apple.com -a LOGIN -w PASSWORD -U xcrun -sdk iphoneos Validation -online -upload -verbose "path to ipa" security delete-generic-password -s Xcode:itunesconnect.apple.com -a LOGIN</span></code></pre></td></tr></table></div></figure>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
       <h1 class="entry-title"><a href="/blog/2013/06/21/git-log-geek/">Git Log Geek</a></h1>
     
     
@@ -833,87 +783,6 @@ URL4
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2013/06/11/goagent-bitbucket/">Goagent Bitbucket</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2013-06-11T22:39:00+08:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>11</span><span class='date-suffix'>th</span>, <span class='date-year'>2013</span></span> <span class='time'>10:39 pm</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>git config --add http.proxy 127.0.0.1:8087
-</span><span class='line'>git config --add https.proxy 127.0.0.1:8087
-</span><span class='line'>git config --add http.sslVerify false
-</span><span class='line'>git config --add https.sslVerify false
-</span><span class='line'>
-</span><span class='line'>
-</span><span class='line'>
-</span><span class='line'>url = https://*****@bitbucket.org/****.git
-</span><span class='line'>pushurl = https://****@bitbucket.org/****.git</span></code></pre></td></tr></table></div></figure>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/05/31/ios-design-memo-list/">iOS设计元素备忘单</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2013-05-31T09:02:00+08:00'><span class='date'><span class='date-month'>May</span> <span class='date-day'>31</span><span class='date-suffix'>st</span>, <span class='date-year'>2013</span></span> <span class='time'>9:02 am</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><img src="/images/img/ios_1_resolutions.png">
-<img src="/images/img/ios_2_icons.png">
-<img src="/images/img/ios_3_commonly_used_design_elements.png">
-<img src="/images/img/ios_4_dislplays.png"></p>
-
-<blockquote><p>本该淡淡然~~~</p></blockquote>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
       <h1 class="entry-title"><a href="/blog/2013/05/08/nspredicate/">NSPredicate 的用法</a></h1>
     
     
@@ -1060,6 +929,295 @@ URL4
 
     </article>
   
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/04/12/25-ios-skill/">25个增强iOS应用程序性能的提示和技巧</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2013-04-12T11:38:00+08:00'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>12</span><span class='date-suffix'>th</span>, <span class='date-year'>2013</span></span> <span class='time'>11:38 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://beyondvincent.com">来源</a></p>
+
+<ol>
+<li>使用ARC进行内存管理</li>
+<li>在适当的情况下使用reuseIdentifier</li>
+<li>尽可能将View设置为不透明（Opaque）</li>
+<li>避免臃肿的XIBs</li>
+<li>不要阻塞主线程</li>
+<li>让图片的大小跟UIImageView一样</li>
+<li>选择正确的集合</li>
+<li>使用GZIP压缩</li>
+<li>重用和延迟加载View</li>
+<li>缓存、缓存、缓存</li>
+<li>考虑绘制</li>
+<li>处理内存警告</li>
+<li>重用花销很大的对象</li>
+<li>使用Sprite Sheets</li>
+<li>避免重新处理数据</li>
+<li>选择正确的数据格式</li>
+<li>设置适当的背景图片</li>
+<li>降低Web内容的影响</li>
+<li>设置阴影路径</li>
+<li>优化TableView</li>
+<li>选择正确的数据存储方式</li>
+<li>加速启动时间</li>
+<li>使用Autorelease Pool</li>
+<li>缓存图片 — 或者不缓存</li>
+<li>尽量避免Date格式化</li>
+</ol>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/03/15/shell-manual/">Shell_manual</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2013-03-15T12:34:00+08:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>15</span><span class='date-suffix'>th</span>, <span class='date-year'>2013</span></span> <span class='time'>12:34 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h3>一些强大的命令</h3>
+
+<ul>
+<li><code>!$</code></li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>!$是一个特殊的环境变量，它代表了上一个命令的最后一个字符串。如：你可能会这样：
+</span><span class='line'>$mkdir mydir
+</span><span class='line'>$mv mydir yourdir
+</span><span class='line'>$cd yourdir
+</span><span class='line'>可以改成：
+</span><span class='line'>$mkdir mydir
+</span><span class='line'>$mv !$ yourdir
+</span><span class='line'>$cd !$</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li><code>sudo !!</code></li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>以root的身份执行上一条命令 。
+</span><span class='line'>场景举例：比如Ubuntu里用apt-get安装软件包的时候是需要root身份的，我们经常会忘记在apt-get前加sudo。每次不得不加上sudo再重新键入这行命令，这时可以很方便的用sudo !!完事。
+</span><span class='line'>（陈皓注：在shell下，有时候你会输入很长的命令，你可以使用!xxx来重复最近的一次命令，比如，你以前输入过，vi /where/the/file/is, 下次你可以使用 !vi 重得上次最近一次的vi命令。）</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li><code>cd –</code></li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>回到上一次的目录 。
+</span><span class='line'>场景举例：当前目录为/home/a，用cd ../b切换到/home/b。这时可以通过反复执行cd –命令在/home/a和/home/b之间来回方便的切换。</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li><code>‘ALT+.’ or ‘&lt;ESC&gt; .’</code></li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>热建alt+. 或 esc+. 可以把上次命令行的参数给重复出来。</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li><code>^old^new</code></li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>替换前一条命令里的部分字符串。
+</span><span class='line'>场景：echo "wanderful"，其实是想输出echo "wonderful"。只需要^a^o就行了，对很长的命令的错误拼写有很大的帮助。（陈皓注：也可以使用 !!:gs/old/new）</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li><code>du -s * | sort -n | tail</code></li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>列出当前目录里最大的10个文件。</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li><code>:w !sudo tee %</code></li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>在vi中保存一个只有root可以写的文件</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li><code>&gt; file.txt</code></li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>创建一个空文件，比touch短。</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li><p>在命令行前加空格，该命令不会进入history里。</p></li>
+<li><p><code>echo “ls -l” | at midnight</code></p></li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>在某个时间运行某个命令。</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li><code>ps aux | sort -nk +4 | tail</code></li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>列出头十个最耗内存的进程</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li><code>man ascii</code></li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>显示ascii码表。
+</span><span class='line'>场景：忘记ascii码表的时候还需要google么?尤其在天朝网络如此“顺畅”的情况下，就更麻烦在GWF多应用一次规则了，直接用本地的man ascii吧。</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li><code>ssh user@server bash &lt; /path/to/local/script.sh</code></li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>在远程机器上运行一段脚本。这条命令最大的好处就是不用把脚本拷到远程机器上。</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li><code>python -m SimpleHTTPServer</code></li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>一句话实现一个HTTP服务，把当前目录设为HTTP服务目录，可以通过http://localhost:8000访问 这也许是这个星球上最简单的HTTP服务器的实现了。</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/03/12/launchctl-manual/">Launchctl Manual</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2013-03-12T13:54:00+08:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>12</span><span class='date-suffix'>th</span>, <span class='date-year'>2013</span></span> <span class='time'>1:54 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h3>相关目录</h3>
+
+<ul>
+<li>/System/Library/LaunchDaemons 操作系统，用户登录前生效，以 root 身份执行任务</li>
+<li>/System/Library/LaunchAgents 操作系统，用户登录后生效，以 root 身份执行任务</li>
+<li>/Library/LaunchDaemons 系统管理员，用户登录前生效，以 root 身份执行任务</li>
+<li>/Library/LaunchAgents 系统管理员，用户登录后生效，以 root 身份执行任务</li>
+<li>~/Library/LaunchAgents 当前用户，用户登录后生效，以当前登录用户身份执行任务
+使任务生效</li>
+</ul>
+
+
+<p>将 plist 文件按需要放置在上文的相关目录中</p>
+
+<h3>使任务生效</h3>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>launchctl load &lt;plist path&gt;</span></code></pre></td></tr></table></div></figure>
+
+
+<p>执行上述操作后任务会立即生效，且重启系统后也会自动生效。如果 plist 没有放在指定的目录，重启系统后不会再生效。</p>
+
+<p>如果 plist 存在 Key Disabled，且其值为 true，launchctl load 会提示 nothing found to load，系统启动时也不会自动生效人物，如果要手动强制启动，忽略 Disabled 为 true 带来的影响，传递 -wF 参数给 launchctl 即可。</p>
+
+<h3>使任务失效</h3>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>launchctl unload &lt;plist path&gt;</span></code></pre></td></tr></table></div></figure>
+
+
+<p>将相关 plist 文件从原有目录中移除
+执行上述操作后，任务会立即失效，plist 文件不会被移除，但是如果不将其从相关目录移走的话，重启系统后任务仍然会自动生效。</p>
+</div>
+  
+  
+
+
+    </article>
+  
   <div class="pagination">
     
       <a class="prev" href="/posts/2">&larr; Older</a>
@@ -1087,11 +1245,11 @@ URL4
       </li>
     
       <li class="post">
-        <a href="/blog/2013/06/27/uploade2appstore-via-command-line/">上传appstore通过命令行</a>
+        <a href="/blog/2013/06/21/git-log-geek/">Git Log Geek</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2013/06/21/git-log-geek/">Git Log Geek</a>
+        <a href="/blog/2013/06/13/mac-terminal-color/">Mac Terminal 彩色</a>
       </li>
     
   </ul>
@@ -1127,7 +1285,7 @@ URL4
     <li class="loading">Status updating&#8230;</li>
   </ul>
   
-  <a href="https://github.com/livv">@livv</a> on GitHub
+  <a href="https://github.com/vvlvv">@vvlvv</a> on GitHub
   
   <script type="text/javascript">
     $(document).ready(function(){
@@ -1140,7 +1298,7 @@ URL4
         }
 
         github.showRepos({
-            user: 'livv',
+            user: 'vvlvv',
             count: 0,
             skip_forks: true,
             target: '#gh_repos'
